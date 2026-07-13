@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVTech &mdash; Custom Business Information Systems for Owner-Operators</title>
+<meta name="description" content="MVTech keeps the entire paper side of your business organized, tracked, and professionally presented — custom business information systems for owner-operators nationwide.">
+<meta name="keywords" content="small business bookkeeping, receipt tracking, expense logging, income tracking, business paperwork, monthly financial reports, document organization, vendor management, bill tracking, invoice creation, owner-operator operations, fractional operations, nationwide">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://mvtechusa.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MVTech">
+<meta property="og:url" content="https://mvtechusa.com/">
+<meta property="og:title" content="MVTech — Custom Business Information Systems for Owner-Operators">
+<meta property="og:description" content="The entire paper side of your business, organized, tracked, and professionally presented — every document filed, every dollar logged, a clear report every month. Nationwide.">
+<meta property="og:image" content="https://mvtechusa.com/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MVTech — Custom Business Information Systems for Owner-Operators">
+<meta name="twitter:description" content="The entire paper side of your business, organized, tracked, and professionally presented. Track, never transact. Nationwide.">
+<meta name="twitter:image" content="https://mvtechusa.com/og-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#070b14">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MVTech",
+  "url": "https://mvtechusa.com",
+  "description": "Custom business information systems for owner-operated businesses — document organization, income and expense tracking, and monthly operations reports, nationwide.",
+  "inLanguage": "en-US"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "MVTech",
+  "url": "https://mvtechusa.com",
+  "telephone": "+12134440024",
+  "email": "tech@mvtechusa.com",
+  "description": "MVTech keeps the entire paper side of an owner-operated business organized, tracked, and professionally presented — every document filed, every payment logged, and a clear operations report delivered every month. MVTech tracks and organizes records only; it never holds or moves a client's money.",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceType": "Remote",
+    "availableLanguage": "English",
+    "serviceUrl": "https://mvtechusa.com"
+  },
+  "knowsAbout": [
+    "small business bookkeeping", "receipt tracking", "expense logging",
+    "income tracking", "document organization", "business paperwork",
+    "monthly financial reports", "vendor management", "bill and renewal tracking",
+    "invoice and quote creation", "fillable forms", "owner-operator operations",
+    "fractional operations support"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Plans",
+    "itemListElement": [
+      { "@type": "Offer", "price": "195", "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Organized",
+          "description": "Every document filed and findable, vendor and contact directories, bill and renewal tracking, and a monthly summary report." } },
+      { "@type": "Offer", "price": "395", "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Tracked",
+          "description": "Everything in Organized plus every payment identified and logged, every expense and receipt processed, and a full monthly operations report." } },
+      { "@type": "Offer", "price": "695", "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Wingman",
+          "description": "Everything in Tracked plus documents produced on demand, form conversion and document merge, and a direct line by text anytime." } }
+    ]
+  },
+  "priceRange": "$$"
+}
+</script>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #070b14;
+  --bg-raise: #0d1322;
+  --ink: #e8ecf4;
+  --ink-dim: #94a0b8;
+  --line: rgba(148, 160, 184, 0.14);
+  --cyan: #2dd4bf;
+  --indigo: #6366f1;
+  --glow: rgba(45, 212, 191, 0.35);
+  --font: 'Sora', 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; scroll-padding-top: 84px; }
+body {
+  font-family: var(--font); background: var(--bg); color: var(--ink);
+  font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+
+/* grid backdrop */
+.gridbg {
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148,160,184,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,160,184,0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+.orb {
+  position: absolute; border-radius: 50%; filter: blur(90px); z-index: -1; pointer-events: none;
+}
+.orb-1 { width: 480px; height: 480px; background: rgba(99,102,241,0.22); top: -160px; right: -120px; }
+.orb-2 { width: 420px; height: 420px; background: rgba(45,212,191,0.14); top: 340px; left: -180px; }
+
+/* ===== Nav ===== */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: rgba(7,11,20,0.72); border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 19px; letter-spacing: 0.5px; }
+.logo b { background: linear-gradient(90deg, var(--cyan), var(--indigo)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.logo .usa { margin-left: 5px; font-weight: 800; }
+.logo .usa .r { color: #e63c4d; }
+.logo .usa .w { color: #ffffff; }
+.logo .usa .b { color: #5b8dff; }
+.logo svg circle, .logo svg line, .logo svg ellipse, .logo svg path { stroke: var(--cyan); }
+.navlinks { display: flex; gap: 26px; font-size: 14px; color: var(--ink-dim); }
+.navlinks a { text-decoration: none; transition: color .15s; }
+.navlinks a:hover { color: var(--ink); }
+.nav-cta {
+  text-decoration: none; font-size: 14px; font-weight: 600; padding: 9px 18px; border-radius: 99px;
+  background: linear-gradient(90deg, var(--cyan), var(--indigo)); color: #06090f;
+  transition: opacity .15s;
+}
+.nav-cta:hover { opacity: 0.88; }
+
+/* ===== Hero ===== */
+.hero { position: relative; padding: 110px 0 90px; text-align: center; overflow: hidden; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 12.5px; color: var(--cyan);
+  border: 1px solid rgba(45,212,191,0.3); background: rgba(45,212,191,0.06);
+  padding: 6px 14px; border-radius: 99px; margin-bottom: 28px;
+  max-width: calc(100% - 8px); text-align: center; line-height: 1.5;
+}
+.pill::before { flex-shrink: 0; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px var(--glow); }
+.hero h1 {
+  font-size: clamp(33px, 7vw, 72px); font-weight: 800; line-height: 1.06;
+  letter-spacing: -1.5px; max-width: 15em; margin: 0 auto 24px;
+}
+.hero h1 .grad {
+  background: linear-gradient(90deg, var(--cyan) 0%, var(--indigo) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .sub { font-size: 19px; color: var(--ink-dim); max-width: 38em; margin: 0 auto 40px; }
+.cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.btn-lg {
+  text-decoration: none; font-weight: 700; font-size: 16px; padding: 15px 34px; border-radius: 12px;
+  background: linear-gradient(90deg, var(--cyan), var(--indigo)); color: #06090f;
+  box-shadow: 0 0 34px var(--glow);
+  transition: transform .15s, box-shadow .15s;
+}
+.btn-lg:hover { transform: translateY(-2px); box-shadow: 0 0 50px var(--glow); }
+.btn-ghost {
+  text-decoration: none; font-weight: 600; font-size: 16px; padding: 15px 30px; border-radius: 12px;
+  border: 1px solid var(--line); color: var(--ink); background: rgba(255,255,255,0.02);
+  transition: border-color .15s, background .15s;
+}
+.btn-ghost:hover { border-color: rgba(45,212,191,0.4); background: rgba(45,212,191,0.05); }
+.hero .micro { margin-top: 22px; font-family: var(--mono); font-size: 12.5px; color: var(--ink-dim); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
+.chip {
+  font-family: var(--mono); font-size: 12.5px; color: var(--ink-dim);
+  border: 1px solid var(--line); border-radius: 99px; padding: 8px 16px;
+  background: rgba(255,255,255,0.02);
+}
+.chip b { color: var(--cyan); font-weight: 500; }
+
+/* ===== Sections ===== */
+section { padding: 88px 0; position: relative; }
+.section-head { max-width: 660px; margin: 0 auto 52px; text-align: center; }
+.eyebrow {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 16px;
+}
+.h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -0.8px; line-height: 1.12; }
+.sect-sub { font-size: 17px; color: var(--ink-dim); margin-top: 16px; }
+
+/* unified card system (features, steps, trust all use this) */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 20px; }
+.card {
+  border: 1px solid var(--line); border-radius: 18px; padding: 34px 26px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.012) 100%);
+  position: relative; overflow: hidden; text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+  transition: transform .2s, border-color .2s;
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(45,212,191,0.35); }
+.card::before {
+  content: ""; position: absolute; top: 0; left: 24px; right: 24px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45,212,191,0.5), transparent);
+}
+.card .icon {
+  width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(45,212,191,0.15), rgba(99,102,241,0.15));
+  border: 1px solid rgba(45,212,191,0.25); margin-bottom: 20px; font-size: 22px;
+}
+.card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+.card p { font-size: 14.5px; color: var(--ink-dim); max-width: 34ch; }
+
+/* step number badge + trust badge (reuse .card) */
+.stepnum {
+  width: 40px; height: 40px; border-radius: 50%; margin-bottom: 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 15px; font-weight: 600; color: #06090f;
+  background: linear-gradient(135deg, var(--cyan), var(--indigo));
+}
+.badge-num {
+  font-family: var(--mono); font-size: 12.5px; color: var(--cyan); font-weight: 500;
+  border: 1px solid rgba(45,212,191,0.3); border-radius: 99px; padding: 4px 13px; margin-bottom: 16px;
+}
+
+/* monthly panel — centered */
+.panel {
+  max-width: 960px; margin: 0 auto;
+  border: 1px solid var(--line); border-radius: 20px; padding: 34px 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.012) 100%);
+}
+.ticklist { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; }
+.ticklist li {
+  padding: 11px 0 11px 30px; position: relative; font-size: 14.5px;
+  border-bottom: 1px solid var(--line); color: var(--ink); text-align: left;
+}
+.ticklist li::before {
+  content: "→"; position: absolute; left: 2px; top: 11px; color: var(--cyan); font-family: var(--mono);
+}
+.whobox { max-width: 620px; margin: 44px auto 0; text-align: center; }
+.whobox p { font-size: 16px; color: var(--ink-dim); margin-bottom: 14px; }
+.whobox .note {
+  border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; margin-top: 22px;
+  background: linear-gradient(180deg, rgba(99,102,241,0.08), rgba(255,255,255,0.01));
+  font-size: 14.5px; color: var(--ink);
+}
+
+/* trust */
+.trustband {
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(45,212,191,0.04), transparent);
+}
+
+/* pricing */
+.tiers {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px;
+  align-items: stretch;
+}
+.tier {
+  border: 1px solid var(--line); border-radius: 18px; padding: 34px 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.008));
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  transition: transform .2s, border-color .2s;
+}
+.tier:hover { transform: translateY(-4px); }
+.tier-hot {
+  border-color: rgba(45,212,191,0.5);
+  box-shadow: 0 0 44px rgba(45,212,191,0.12);
+  position: relative;
+}
+.tier-hot .tag {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--cyan), var(--indigo)); color: #06090f;
+  padding: 4px 14px; border-radius: 99px; font-weight: 500; white-space: nowrap;
+}
+.tier h3 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--ink-dim); margin-bottom: 10px; }
+.tier .amt { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
+.tier .amt small { font-size: 15px; font-weight: 400; color: var(--ink-dim); letter-spacing: 0; }
+.tier ul { list-style: none; margin-top: 22px; text-align: left; display: inline-block; }
+.tier li { font-size: 14px; color: var(--ink-dim); padding: 7px 0 7px 24px; position: relative; }
+.tier li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); }
+.setup { text-align: center; margin-top: 30px; font-family: var(--mono); font-size: 13px; color: var(--ink-dim); }
+.setup b { color: var(--ink); }
+
+/* closing */
+.closing { text-align: center; padding: 110px 0; }
+.closing h2 { font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+.closing p { color: var(--ink-dim); margin-bottom: 36px; font-size: 17px; }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding: 32px 0; font-size: 13px; color: var(--ink-dim); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer b { color: var(--ink); }
+
+/* reveal on scroll */
+.rv { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+
+@media (max-width: 880px) {
+  .hero { padding: 76px 0 60px; }
+  section { padding: 64px 0; }
+  .panel { padding: 30px 28px; }
+}
+@media (max-width: 720px) {
+  .navlinks { display: none; }
+  .nav .wrap { height: 58px; }
+  .ticklist { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  body { font-size: 15px; }
+  .wrap { padding: 0 18px; }
+  .hero { padding: 54px 0 46px; }
+  section { padding: 46px 0; }
+  .hero .sub { font-size: 16.5px; }
+  .cta-row { flex-direction: column; }
+  .btn-lg, .btn-ghost { width: 100%; max-width: 340px; text-align: center; }
+  .card, .tier { padding: 26px 20px; }
+  .panel { padding: 24px 22px; }
+  .tier .amt { font-size: 38px; }
+  .orb-1 { width: 280px; height: 280px; right: -140px; }
+  .orb-2 { width: 240px; height: 240px; left: -140px; }
+  .closing { padding: 70px 0; }
+  footer .wrap { flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+}
+@media (hover: none) {
+  .card:hover, .tier:hover, .btn-lg:hover { transform: none; }
+}
+
+/* ===== Print ===== */
+@media print {
+  :root { color-scheme: light; }
+  html { overflow-x: visible; }
+  body { background: #fff; color: #111; font-size: 12.5pt; }
+  .gridbg, .orb, .nav-cta, .btn-ghost { display: none; }
+  .rv { opacity: 1 !important; transform: none !important; transition: none; }
+
+  .nav { position: static; background: #fff; border-bottom: 1px solid #999; backdrop-filter: none; }
+  .logo { color: #000; }
+  .logo b, .hero h1 .grad {
+    background: none; -webkit-background-clip: initial; background-clip: initial;
+    -webkit-text-fill-color: initial; color: #000;
+  }
+  .logo svg circle, .logo svg line, .logo svg ellipse, .logo svg path { stroke: #000; }
+  .logo .usa span { color: #000; }
+  .navlinks { display: none; }
+
+  .hero { overflow: visible; padding: 28pt 0 18pt; }
+  .pill { color: #333; border-color: #999; background: none; }
+  .pill::before { background: #333; box-shadow: none; }
+  .hero .sub, .sect-sub, .card p, .tier li, .whobox p, .micro, .chip, .setup,
+  .closing p, footer { color: #333; }
+  .whobox .note { color: #111; background: none; border-color: #bbb; }
+  .tier .amt small { color: #333; }
+  .eyebrow, .badge-num { color: #555; }
+  .chip, .badge-num { background: none; border-color: #bbb; }
+  .chip b, .badge-num { color: #333; }
+  .stepnum { background: none; border: 1pt solid #000; color: #000; }
+
+  .btn-lg {
+    background: none; color: #000; box-shadow: none; border: 1.5pt solid #000;
+    border-radius: 6pt; padding: 8pt 18pt;
+  }
+  .card, .tier, .panel {
+    background: none; border: 1pt solid #aaa; break-inside: avoid;
+  }
+  .card::before { display: none; }
+  .card .icon { background: none; border-color: #aaa; }
+  .card:hover, .tier:hover, .btn-lg:hover { transform: none; box-shadow: none; }
+  .tier-hot { border: 1.5pt solid #000; box-shadow: none; }
+  .tier-hot .tag { background: #000; color: #fff; }
+  .tier h3 { color: #333; }
+  .ticklist li { border-bottom-color: #ccc; color: #111; }
+  .ticklist li::before, .tier li::before { color: #000; }
+  .trustband { background: none; border-color: #999; }
+
+  section { padding: 16pt 0; }
+  .closing { padding: 22pt 0; }
+  .section-head { margin-bottom: 16pt; }
+  .h2 { margin-bottom: 6pt; }
+  footer { border-top: 1pt solid #999; padding: 12pt 0; }
+  footer b { color: #000; }
+  a { text-decoration: none; color: inherit; }
+}
+</style>
+</head>
+<body>
+
+<div class="gridbg"></div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <svg width="26" height="26" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="rotate(90 21 21)" fill="none" stroke-width="1.6">
+          <circle cx="21" cy="21" r="18"/>
+          <line x1="3" y1="21" x2="39" y2="21"/>
+          <ellipse cx="21" cy="21" rx="18" ry="12.7" opacity="0.5"/>
+          <path d="M 21 3 Q 27 21 21 39" opacity="0.7"/>
+          <path d="M 21 3 Q 15 21 21 39" opacity="0.7"/>
+        </g>
+      </svg>
+      MV<b>TECH</b><span class="usa"><span class="r">U</span><span class="w">S</span><span class="b">A</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="#what">Platform</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <a class="nav-cta" href="sms:+12134440024">Text us</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="wrap">
+    <div class="pill">CUSTOM BUSINESS INFORMATION SYSTEMS</div>
+    <h1>Run your business.<br><span class="grad">We run the records.</span></h1>
+    <p class="sub">MVTech keeps the entire paper side of your business organized, tracked, and
+    professionally presented — every document filed, every dollar logged, every report ready
+    to hand over.</p>
+    <div class="cta-row">
+      <a class="btn-lg" href="sms:+12134440024">Text 213-444-0024</a>
+      <a class="btn-ghost" href="#pricing">See pricing</a>
+    </div>
+    <div class="chips">
+      <div class="chip"><b>1</b> onboarding call</div>
+      <div class="chip"><b>1</b> forward rule</div>
+      <div class="chip">cancel <b>anytime</b></div>
+      <div class="chip">track, <b>never transact</b></div>
+    </div>
+  </div>
+</header>
+
+<section id="what">
+  <div class="wrap">
+    <div class="section-head rv">
+      <div class="eyebrow">// the platform</div>
+      <h2 class="h2">Everything on paper, handled.</h2>
+      <p class="sect-sub">Built for owner-operators who wear every hat — the system works while
+      you work.</p>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="icon">🗂</div>
+        <h3>Every Document, One Place</h3>
+        <p>Permits, policies, contracts, vendor accounts, employee records, contacts and phone
+        numbers — everything that applies to your business, filed and findable in seconds.</p>
+      </div>
+      <div class="card rv">
+        <div class="icon">⚡</div>
+        <h3>Every Dollar Tracked</h3>
+        <p>Every payment you receive — Zelle, PayPal, Venmo, Stripe, Square — identified and
+        logged the moment it lands. Every expense processed in real time. Bills and renewals
+        monitored so nothing lapses.</p>
+      </div>
+      <div class="card rv">
+        <div class="icon">📊</div>
+        <h3>Reports That Open Doors</h3>
+        <p>Professionally produced monthly reports — ready to hand to your tax preparer, a
+        lender, or a buyer without a single shoebox involved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head rv">
+      <div class="eyebrow">// how it works</div>
+      <h2 class="h2">Live your business. That's the workflow.</h2>
+      <p class="sect-sub">Setup is handled for you — you change nothing about how you work.</p>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="stepnum">1</div>
+        <h3>Connect</h3>
+        <p>One onboarding call. We link your business email and a shared folder for your
+        deliverables. Done.</p>
+      </div>
+      <div class="card rv">
+        <div class="stepnum">2</div>
+        <h3>Live your business</h3>
+        <p>Snap a photo of a receipt and text it over — or do nothing at all. Our custom
+        processing engine handles everything in real time with advanced scripting.</p>
+      </div>
+      <div class="card rv">
+        <div class="stepnum">3</div>
+        <h3>Get the reports</h3>
+        <p>Each month: a clear operations report — revenue, expenses, what needs your attention,
+        and what's already handled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="monthly">
+  <div class="wrap">
+    <div class="section-head rv">
+      <div class="eyebrow">// every month</div>
+      <h2 class="h2">What ships on the 1st</h2>
+      <p class="sect-sub">Every deliverable, on a schedule you can set your watch by.</p>
+    </div>
+    <div class="panel rv">
+      <ul class="ticklist">
+        <li>Monthly operations report — income, expenses, trends</li>
+        <li>Every payment received identified &amp; tracked — Zelle, PayPal, Venmo, Stripe, Square</li>
+        <li>Complete expense logs with every receipt filed</li>
+        <li>Bill &amp; renewal tracker — nothing expires unnoticed</li>
+        <li>Vendor, contact &amp; employee directories kept current</li>
+        <li>Any business document produced as a polished PDF</li>
+        <li>Form conversion — send a photo, get a fillable form in your branding</li>
+        <li>Document merge — enter your info once, it fills the whole packet</li>
+        <li>Direct access to me by text or phone</li>
+      </ul>
+    </div>
+    <div class="whobox rv">
+      <p>Owner-operators who wear every hat: food trucks, used car lots, home sellers going
+      FSBO, trades, and solo businesses of every kind nationwide. If your records live in a
+      pile, a drawer, or your head — that's exactly where MVTech starts.</p>
+      <div class="note">You'll always have concise, organized, attractive documents to hand
+      a client, CPA, real estate agent, attorney, or loan officer.</div>
+    </div>
+  </div>
+</section>
+
+<section class="trustband">
+  <div class="wrap">
+    <div class="section-head rv">
+      <div class="eyebrow">// built on trust</div>
+      <h2 class="h2">Why owner-operators let us in.</h2>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="badge-num">01</div>
+        <h3>Track, never transact</h3>
+        <p>We work from records only — we never hold or move your money, the same way your
+        accountant sees your books without touching your bank.</p>
+      </div>
+      <div class="card rv">
+        <div class="badge-num">02</div>
+        <h3>You own everything</h3>
+        <p>Your accounts stay yours. Your documents live in a folder you control. Leave anytime
+        and take it all with you.</p>
+      </div>
+      <div class="card rv">
+        <div class="badge-num">03</div>
+        <h3>Scoped access only</h3>
+        <p>Access is limited to exactly what the work requires, granted by you, revocable by you
+        at any moment. NDA available before we look at a single record.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head rv">
+      <div class="eyebrow">// pricing</div>
+      <h2 class="h2">Simple plans, flat monthly.</h2>
+      <p class="sect-sub">One-time onboarding <b>$495</b> covers full setup, document intake,
+      and first-month buildout.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier rv">
+        <h3>Organized</h3>
+        <div class="amt">$195<small>/mo</small></div>
+        <ul>
+          <li>Every document filed &amp; findable</li>
+          <li>Vendor &amp; contact directories</li>
+          <li>Bill &amp; renewal tracking</li>
+          <li>Monthly summary report</li>
+        </ul>
+      </div>
+      <div class="tier tier-hot rv">
+        <div class="tag">MOST POPULAR</div>
+        <h3>Tracked</h3>
+        <div class="amt">$395<small>/mo</small></div>
+        <ul>
+          <li>Everything in Organized</li>
+          <li>Every payment in, identified &amp; logged</li>
+          <li>Every expense &amp; receipt processed</li>
+          <li>Full monthly operations report</li>
+        </ul>
+      </div>
+      <div class="tier rv">
+        <h3>Wingman</h3>
+        <div class="amt">$695<small>/mo</small></div>
+        <ul>
+          <li>Everything in Tracked</li>
+          <li>Documents produced on demand</li>
+          <li>Form conversion &amp; document merge</li>
+          <li>Direct line — text me anytime</li>
+        </ul>
+      </div>
+    </div>
+    <div class="setup">no contracts to decode &middot; no seats to license &middot; cancel anytime, keep everything</div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2 class="rv">Ready when you are.</h2>
+    <p class="rv">No pitch deck, no pressure — tell me what your paperwork looks like today.</p>
+    <a class="btn-lg rv" href="tel:+12134440024">Call or text 213-444-0024</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>MVTech</b> · Serving owner-operators nationwide</div>
+    <div><a href="privacy.html">Privacy Policy</a> · © 2026 MVTech</div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy &mdash; MVTech</title>
+<meta name="description" content="MVTech privacy policy — how client data is accessed, used, protected, and deleted.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mvtechusa.com/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#070b14">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #070b14;
+  --ink: #e8ecf4;
+  --ink-dim: #94a0b8;
+  --line: rgba(148, 160, 184, 0.14);
+  --cyan: #2dd4bf;
+  --indigo: #6366f1;
+  --font: 'Sora', 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; scroll-padding-top: 84px; }
+body {
+  font-family: var(--font); background: var(--bg); color: var(--ink);
+  font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: rgba(7,11,20,0.72); border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 19px; letter-spacing: 0.5px; }
+.logo b { background: linear-gradient(90deg, var(--cyan), var(--indigo)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.logo .usa { margin-left: 5px; font-weight: 800; }
+.logo .usa .r { color: #e63c4d; }
+.logo .usa .w { color: #ffffff; }
+.logo .usa .b { color: #5b8dff; }
+.logo svg circle, .logo svg line, .logo svg ellipse, .logo svg path { stroke: var(--cyan); }
+.navlinks { display: flex; gap: 26px; font-size: 14px; color: var(--ink-dim); }
+.navlinks a { text-decoration: none; transition: color .15s; }
+.navlinks a:hover, .navlinks a.active { color: var(--ink); }
+.nav-cta {
+  text-decoration: none; font-size: 14px; font-weight: 600; padding: 9px 18px; border-radius: 99px;
+  background: linear-gradient(90deg, var(--cyan), var(--indigo)); color: #06090f;
+  transition: opacity .15s;
+}
+.nav-cta:hover { opacity: 0.88; }
+
+.doc { max-width: 760px; margin: 0 auto; padding: 64px 24px 90px; }
+.doc .eyebrow {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 14px;
+}
+.doc h1 { font-size: clamp(32px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+.doc .updated { font-family: var(--mono); font-size: 12.5px; color: var(--ink-dim); margin-bottom: 40px; }
+.doc h2 { font-size: 21px; font-weight: 700; margin: 40px 0 12px; letter-spacing: -0.3px; }
+.doc p, .doc li { font-size: 15px; line-height: 1.7; color: var(--ink-dim); margin-bottom: 12px; }
+.doc b { color: var(--ink); font-weight: 600; }
+.doc ul { padding-left: 22px; }
+.doc a { color: var(--cyan); text-decoration-color: rgba(45,212,191,0.4); }
+
+footer { border-top: 1px solid var(--line); padding: 32px 0; font-size: 13px; color: var(--ink-dim); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer b { color: var(--ink); }
+
+.doc a { overflow-wrap: break-word; }
+
+@media (max-width: 720px) {
+  .navlinks { display: none; }
+  .nav .wrap { height: 58px; }
+}
+
+/* ===== Print ===== */
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff; color: #111; font-size: 11.5pt; }
+  .nav-cta, .navlinks { display: none; }
+  .nav { position: static; background: #fff; border-bottom: 1px solid #999; backdrop-filter: none; }
+  .logo { color: #000; }
+  .logo b {
+    background: none; -webkit-background-clip: initial; background-clip: initial;
+    -webkit-text-fill-color: initial; color: #000;
+  }
+  .logo svg circle, .logo svg line, .logo svg ellipse, .logo svg path { stroke: #000; }
+  .logo .usa span { color: #000; }
+  .doc { padding: 24pt 0 30pt; }
+  .doc .eyebrow { color: #555; }
+  .doc p, .doc li { color: #222; }
+  .doc b { color: #000; }
+  .doc .updated { color: #555; }
+  .doc h2 { break-after: avoid; }
+  .doc a { color: #000; text-decoration: underline; text-decoration-color: #999; }
+  footer { border-top: 1pt solid #999; color: #333; padding: 10pt 0; }
+  footer b { color: #000; }
+  footer a { color: #333; text-decoration: none; }
+}
+
+@media (max-width: 520px) {
+  body { font-size: 15px; }
+  .wrap { padding: 0 18px; }
+  .doc { padding: 44px 18px 64px; }
+  .nav .wrap { height: 58px; }
+  footer .wrap { flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <svg width="26" height="26" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="rotate(90 21 21)" fill="none" stroke-width="1.6">
+          <circle cx="21" cy="21" r="18"/>
+          <line x1="3" y1="21" x2="39" y2="21"/>
+          <ellipse cx="21" cy="21" rx="18" ry="12.7" opacity="0.5"/>
+          <path d="M 21 3 Q 27 21 21 39" opacity="0.7"/>
+          <path d="M 21 3 Q 15 21 21 39" opacity="0.7"/>
+        </g>
+      </svg>
+      MV<b>TECH</b><span class="usa"><span class="r">U</span><span class="w">S</span><span class="b">A</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="index.html#what">Platform</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="privacy.html" class="active">Privacy</a>
+    </div>
+    <a class="nav-cta" href="sms:+12134440024">Text us</a>
+  </div>
+</nav>
+
+<main class="doc">
+  <div class="eyebrow">// legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">last updated: 7/12/2026</p>
+
+  <p>MVTech (&ldquo;we,&rdquo; &ldquo;us&rdquo;) provides custom business information systems to
+  owner-operated businesses. This policy explains what information we handle, why we handle it,
+  and the control you keep over it.</p>
+
+  <h2>The Short Version</h2>
+  <ul>
+    <li>We access only what you explicitly grant, and only to deliver the service you hired us for.</li>
+    <li>We never sell your data, never share it with third parties for marketing, and never use it
+    for advertising.</li>
+    <li>We track and organize your records &mdash; we never hold or move your money.</li>
+    <li>You can revoke our access at any time, and everything we produced for you is yours to keep.</li>
+  </ul>
+
+  <h2>Information This Website Collects</h2>
+  <p>This website is a static informational site. It sets no cookies, runs no analytics, and
+  contains no tracking of any kind. If you contact us by phone or text, we receive whatever you
+  choose to send.</p>
+
+  <h2>Information Clients Provide</h2>
+  <p>When you become a client, you may provide business records such as receipts, invoices,
+  vendor documents, permits, contracts, and contact directories. We use these solely to provide
+  the services described in your service agreement: organizing documents, logging income and
+  expenses, and producing reports and deliverables for you.</p>
+
+  <h2>Google User Data</h2>
+  <p>Some clients choose to connect a Google account (such as Gmail) to MVTech&rsquo;s processing
+  systems so that business email &mdash; receipts, payment notifications, vendor bills &mdash; can
+  be read and organized as it arrives. For those connections:</p>
+  <ul>
+    <li><b>What we access:</b> email messages and labels in the connected account, under the exact
+    scopes shown on the Google consent screen you approve.</li>
+    <li><b>How we use it:</b> exclusively to identify, log, label, and file business records
+    (income, expenses, bills, documents) for your engagement, and to produce your reports and
+    deliverables. We do not send email from your account.</li>
+    <li><b>Who sees it:</b> access is limited to MVTech. Data from your account is never sold,
+    never used for advertising, and never transferred to third parties except as required to
+    provide the service you requested or as required by law.</li>
+    <li><b>Storage &amp; retention:</b> extracted business records (for example, an expense line
+    from a receipt email) are stored on infrastructure MVTech controls for the duration of your
+    engagement. When your engagement ends, or on request at any time, your data is deleted and
+    your deliverables are handed over to you.</li>
+    <li><b>Revocation:</b> you can revoke MVTech&rsquo;s access at any moment at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
+    independent of anything we do.</li>
+  </ul>
+  <p>MVTech&rsquo;s use and transfer of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services
+  User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>Financial Information</h2>
+  <p>MVTech operates on a strict track-never-transact basis. We record and categorize financial
+  activity from the records you share; we have no ability to initiate payments, transfers, or any
+  transaction on your behalf, and we never request or store your banking credentials.</p>
+
+  <h2>Security</h2>
+  <p>Client records are kept on access-controlled systems, separated per client, with credentials
+  managed centrally and access limited to what each engagement requires.</p>
+
+  <h2>Your Rights</h2>
+  <p>At any time you may ask us to show you what we hold for you, correct it, hand it over, or
+  delete it. Offboarding is simple by design: revoke access, receive your files, done.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the current version will always be at this address with an updated
+  date at the top.</p>
+
+  <h2>Contact</h2>
+  <p>MVTech &middot; Nationwide USA<br>
+  Email: <a href="mailto:tech@mvtechusa.com">tech@mvtechusa.com</a><br>
+  Phone: <a href="tel:+12134440024">213-444-0024</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>MVTech</b> &middot; Serving owner-operators nationwide</div>
+    <div><a href="privacy.html">Privacy Policy</a> &middot; &copy; 2026 MVTech</div>
+  </div>
+</footer>
+
+</body>
+</html>
