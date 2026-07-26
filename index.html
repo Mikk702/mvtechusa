@@ -202,7 +202,6 @@ section{position:relative}
 .glow::before,.glow::after{content:"";position:absolute;border-radius:50%;filter:blur(85px);opacity:.5}
 .glow.cool::before{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,rgba(139,92,246,.3),transparent 65%)}
 .glow.cool::after{width:460px;height:460px;right:-100px;bottom:-160px;background:radial-gradient(circle,rgba(232,181,75,.18),transparent 65%)}
-.glow.warm::before{width:480px;height:480px;left:42%;top:-160px;background:radial-gradient(circle,rgba(232,181,75,.16),transparent 65%)}
 
 /* ---------- Hero ---------- */
 .hero{padding-top:clamp(2.25rem,4.5vw,4.1rem);padding-bottom:clamp(3rem,6vw,4.5rem);text-align:center}
@@ -227,17 +226,6 @@ section{position:relative}
   aspect-ratio:16/8.4;position:relative;overflow:hidden;
   box-shadow:0 40px 120px -40px rgba(0,0,0,.85);
 }
-.panel .waves{position:absolute;left:0;right:0;bottom:0;height:58%;
-  display:flex;align-items:flex-end;gap:4px;padding:0 6% 8%;opacity:.85}
-.panel .waves i{flex:1;border-radius:3px 3px 0 0;min-width:0}
-.panel .waves i.up{background:linear-gradient(180deg,var(--violet-2),rgba(139,92,246,.15))}
-.panel .waves i.dn{background:linear-gradient(180deg,var(--gold),rgba(232,181,75,.12))}
-.panel .tag{position:absolute;top:18px;left:20px;font-size:.78rem;color:var(--muted);
-  border:1px solid var(--line);border-radius:var(--r-pill);padding:.3rem .8rem;background:rgba(0,0,0,.3)}
-.panel .caption{position:absolute;top:16px;right:20px;font-size:.8rem;color:var(--muted-2);letter-spacing:.02em}
-.panel .legend{position:absolute;left:6%;top:52px;display:flex;gap:1.2rem;font-size:.78rem;color:var(--muted)}
-.panel .legend span{display:flex;align-items:center;gap:.4rem}
-.panel .legend i{width:10px;height:10px;border-radius:3px}
 
 /* ---------- Document deck (3-up carousel) ---------- */
 .deck-panel{aspect-ratio:auto;padding:0}
@@ -273,15 +261,6 @@ section{position:relative}
   background:var(--card);padding:clamp(1.5rem,3vw,2.4rem);text-align:left;max-width:760px;margin-inline:auto}
 .rolepanel h3{font-size:1.25rem;margin-bottom:.6rem}
 .rolepanel p{color:var(--muted);line-height:1.55}
-
-/* ---------- Split ---------- */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-.split h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:1.2rem}
-.split p.body{color:var(--muted);font-size:1.08rem;line-height:1.55;margin-bottom:1.6rem}
-.checks{list-style:none;display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.8rem}
-.checks li{display:flex;gap:.7rem;align-items:flex-start;color:var(--ink-2)}
-.checks svg{flex:none;margin-top:2px;color:var(--gold)}
-.split .panel{margin-top:0;aspect-ratio:4/3.4}
 
 /* ---------- Feature bento ---------- */
 .bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:3rem}
@@ -353,8 +332,6 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
 
 /* ---------- Responsive ---------- */
 @media(max-width:900px){
-  .split{grid-template-columns:1fr}
-  .split .panel{order:-1}
   .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-brand{grid-column:1/-1}
@@ -580,17 +557,6 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
 </footer>
 
 <script>
-// report bars (income up / expense down pattern)
-document.querySelectorAll('.panel .waves').forEach(w=>{
-  const n=30;let h='';
-  for(let i=0;i<n;i++){
-    const cls=i%2?'dn':'up';
-    const base=cls==='up'?34:24;
-    h+='<i class="'+cls+'" style="height:'+(base+Math.abs(Math.sin(i*.6))*52+Math.random()*8)+'%"></i>';
-  }
-  w.innerHTML=h;
-});
-
 // trade tabs
 const roles=[
   {h:"Every job's real cost, clear",p:"We document and track every facet of your business — receipts from the truck, supplier invoices, materials by the job — itemized so you can see what each job actually cost you. Contractor licensing, bonding, certifications and permits are filed with their dates tracked, so a reminder lands on your dashboard before one comes due and you're prepared at tax time."},
