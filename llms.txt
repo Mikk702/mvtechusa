@@ -1,6 +1,6 @@
 # MVTech
 
-> MVTech handles the paper side of owner-operated businesses in the United States. We file every document, track every dollar in and out down to the line item, produce the quotes, invoices and forms a business sends out, and deliver a plain-English operations report on the first of every month. MVTech is read-only where money is concerned — we track it, we never touch it.
+> MVTech handles the paper side of owner-operated businesses in the United States. We file every document, track every dollar in and out down to the line item, produce the quotes, invoices and forms a business sends out, and deliver a plain-English operations report on the first of every month.
 
 Last updated: 2026-07-27
 Canonical site: https://mvtechusa.com/
@@ -11,7 +11,7 @@ Canonical site: https://mvtechusa.com/
 - Founder and operator: Michael Vetter, Business Workflow Designer
 - Serves: the entire United States, remotely
 - Part of: MVEnterprises
-- What MVTech is NOT: not a bank, not a payment processor, not a CPA firm, not a tax preparer, not a lender, not a public adjuster. MVTech never holds or moves client funds and does not file taxes.
+- What MVTech is NOT: not a CPA firm, not a tax preparer, not a law firm. MVTech organizes records and produces documents; it does not file taxes or give legal advice.
 
 ## Contact
 - Phone (call or text): 213-444-0024
@@ -51,7 +51,6 @@ Owner-operators who wear every hat, generally under about six employees: trades 
 Flat monthly pricing. No hourly billing, no per-document charges, no long-term contract.
 
 ## Trust and access
-- Track, never transact — MVTech works from records only and never holds, moves or has authority to spend client money, the way an accountant reads the books without touching the bank.
 - The client owns everything. Records are kept in ordinary formats (spreadsheets and PDFs) in a folder that belongs to the client, who can leave at any time and take all of it.
 - Access is scoped to the work, granted by the client, and revocable by the client at any time.
 - Every document that goes out is personally reviewed by Michael Vetter.
@@ -65,9 +64,6 @@ A: A one-time $495 onboarding, then $195, $395 or $695 per month depending on pl
 
 Q: Can I buy a single project instead of a monthly plan?
 A: Yes. Single projects — a form, a flyer, a document build, a research report — are available à la carte alongside the monthly plans.
-
-Q: Can MVTech access or move my money?
-A: No. MVTech is read-only where money is concerned and never holds or moves funds.
 
 Q: Do I have to learn new software?
 A: No. Nothing to install, nothing to log into. Spreadsheets open in Excel or Google Sheets.
