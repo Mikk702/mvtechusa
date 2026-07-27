@@ -52,7 +52,6 @@ Flat monthly pricing. No hourly billing, no per-document charges, no long-term c
 
 ## Trust and access
 - The client owns everything. Records are kept in ordinary formats (spreadsheets and PDFs) in a folder that belongs to the client, who can leave at any time and take all of it.
-- Access is scoped to the work, granted by the client, and revocable by the client at any time.
 - Every document that goes out is personally reviewed by Michael Vetter.
 
 ## Common questions
