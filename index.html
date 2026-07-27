@@ -40,7 +40,7 @@
       "@type": "WebPage",
       "@id": "https://mvtechusa.com/#webpage",
       "url": "https://mvtechusa.com/",
-      "name": "MVTech — Custom Business Information Systems for Owner-Operators",
+      "name": "MVTech — Business Paperwork & Receipt Tracking for Owner-Operators",
       "isPartOf": { "@id": "https://mvtechusa.com/#website" },
       "about": { "@id": "https://mvtechusa.com/#organization" },
       "primaryImageOfPage": { "@id": "https://mvtechusa.com/#logo" },
@@ -100,8 +100,8 @@
       ],
       "makesOffer": [
         { "@id": "https://mvtechusa.com/#plan-organized" },
-        { "@id": "https://mvtechusa.com/#plan-promoted" },
-        { "@id": "https://mvtechusa.com/#plan-wingman" }
+        { "@id": "https://mvtechusa.com/#plan-associate" },
+        { "@id": "https://mvtechusa.com/#plan-team-member" }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -133,7 +133,7 @@
           },
           {
             "@type": "Offer",
-            "@id": "https://mvtechusa.com/#plan-promoted",
+            "@id": "https://mvtechusa.com/#plan-associate",
             "price": "395",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
@@ -148,7 +148,7 @@
             },
             "itemOffered": {
               "@type": "Service",
-              "name": "Promoted",
+              "name": "Associate",
               "serviceType": "Document organization plus advertising and branded document production",
               "provider": { "@id": "https://mvtechusa.com/#organization" },
               "areaServed": { "@type": "Country", "name": "United States" },
@@ -157,7 +157,7 @@
           },
           {
             "@type": "Offer",
-            "@id": "https://mvtechusa.com/#plan-wingman",
+            "@id": "https://mvtechusa.com/#plan-team-member",
             "price": "695",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
@@ -172,11 +172,11 @@
             },
             "itemOffered": {
               "@type": "Service",
-              "name": "Wingman",
+              "name": "Team Member",
               "serviceType": "Full operations support for owner-operated businesses",
               "provider": { "@id": "https://mvtechusa.com/#organization" },
               "areaServed": { "@type": "Country", "name": "United States" },
-              "description": "Everything in Promoted plus your MVTech rep on call with a direct line anytime, your tech person for everyday apps, devices and accounts, and a deep-dive research report and review each quarter."
+              "description": "Everything in Associate plus your MVTech rep on call with a direct line anytime, your tech person for everyday apps, devices and accounts, and a deep-dive research report and review each quarter."
             }
           }
         ]
@@ -254,7 +254,7 @@
           "name": "How much does MVTech cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There's a one-time $495 onboarding that builds your system up front, then a flat monthly price: Organized is $195 a month, Promoted is $395 a month, and Wingman is $695 a month. No hourly billing and no per-document charges — the monthly price is the price."
+            "text": "There's a one-time $495 onboarding that builds your system up front, then a flat monthly price: Organized is $195 a month, Associate is $395 a month, and Team Member is $695 a month. No hourly billing and no per-document charges — the monthly price is the price."
           }
         },
         {
@@ -581,6 +581,7 @@ section{position:relative}
 .plist li{display:flex;gap:.6rem;font-size:.92rem;color:var(--ink-2)}
 .plist svg{flex:none;margin-top:3px;color:var(--gold)}
 .pcard .btn{margin-top:auto}
+.alacarte{margin:2.2rem auto 0;max-width:62ch;text-align:center;color:var(--muted);font-size:.98rem;line-height:1.55}
 
 /* ---------- Footer ---------- */
 footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:var(--muted)}
@@ -778,8 +779,8 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
 <section class="pad" id="pricing">
   <div class="wrap">
     <div class="center reveal">
-      <h2>Simple plans. <span class="grad">Flat monthly price.</span></h2>
-      <p class="lead">Every plan starts with a one-time $495 onboarding — we build your system up front so you never play catch-up. Made for owner-operators.</p>
+      <h2>Bring me on. <span class="grad">Flat monthly price.</span></h2>
+      <p class="lead">Three ways to work together — from keeping your records straight to having someone on your team. No payroll, no W-2, no overhead. Every plan starts with a one-time $495 onboarding, so your system is built before you pay a monthly dollar.</p>
     </div>
     <div class="prices">
       <article class="pcard reveal">
@@ -795,30 +796,31 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
         <a class="btn btn-ghost" href="#contact">Get started</a>
       </article>
       <article class="pcard feature reveal">
-        <span class="tier t2">PROMOTED <span class="pop">· Most popular</span></span>
+        <span class="tier t2">ASSOCIATE <span class="pop">· Most popular</span></span>
         <div class="price">$395 <span>/ month</span></div>
-        <div class="psub">In order — and out in front of customers.</div>
+        <div class="psub">Someone doing the work, not just filing it.</div>
         <ul class="plist">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in Organized</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your ads written, posted and kept running</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Graphics, flyers and custom documents on request</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in your own brand — polished and print-ready</li>
         </ul>
-        <a class="btn btn-primary" href="#contact">Choose Promoted</a>
+        <a class="btn btn-primary" href="#contact">Choose Associate</a>
       </article>
       <article class="pcard reveal">
-        <span class="tier t3">WINGMAN</span>
+        <span class="tier t3">TEAM MEMBER</span>
         <div class="price">$695 <span>/ month</span></div>
-        <div class="psub">A partner across the whole operation.</div>
+        <div class="psub">Someone on your team, across the whole operation.</div>
         <ul class="plist">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in Promoted</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in Associate</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your MVTech rep on call — a direct line anytime</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your tech person for the everyday stuff — apps, devices, accounts</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A deep-dive research report and review each quarter</li>
         </ul>
-        <a class="btn btn-gold" href="#contact">Choose Wingman</a>
+        <a class="btn btn-gold" href="#contact">Choose Team Member</a>
       </article>
     </div>
+    <p class="alacarte reveal">Not ready for a monthly plan? Single projects — a form, a flyer, a research report — are available one at a time. Ask when we talk.</p>
   </div>
 </section>
 
@@ -840,7 +842,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
       </details>
       <details>
         <summary><h3>How much does MVTech cost?</h3></summary>
-        <div class="ans">There's a one-time $495 onboarding that builds your system up front, then a flat monthly price: Organized is $195 a month, Promoted is $395 a month, and Wingman is $695 a month. No hourly billing and no per-document charges — the monthly price is the price.</div>
+        <div class="ans">There's a one-time $495 onboarding that builds your system up front, then a flat monthly price: Organized is $195 a month, Associate is $395 a month, and Team Member is $695 a month. No hourly billing and no per-document charges — the monthly price is the price.</div>
       </details>
       <details>
         <summary><h3>Can MVTech access my bank account or move my money?</h3></summary>
