@@ -1,38 +1,102 @@
 # MVTech
 
-MVTech provides custom business information systems for owner-operated businesses across the United States. We keep the entire paper side of a business organized, tracked, and professionally presented — every document filed, every dollar logged, and a clear report delivered every month. MVTech tracks and organizes records only; it never holds a client's money or moves funds. All work is remote and available nationwide.
+> MVTech handles the paper side of owner-operated businesses in the United States. We file every document, track every dollar in and out down to the line item, produce the quotes, invoices and forms a business sends out, and deliver a plain-English operations report on the first of every month. MVTech is read-only where money is concerned — we track it, we never touch it.
+
+Last updated: 2026-07-27
+Canonical site: https://mvtechusa.com/
+
+## Identity
+- Name: MVTech (also written MVTech USA)
+- Type: remote document, records and operations service for small owner-operated businesses
+- Founder and operator: Michael Vetter, Business Workflow Designer
+- Based in: Las Cruces, New Mexico, USA
+- Serves: the entire United States, remotely
+- Part of: MVEnterprises
+- What MVTech is NOT: not a bank, not a payment processor, not a CPA firm, not a tax preparer, not a lender, not a public adjuster. MVTech never holds or moves client funds and does not file taxes.
 
 ## Contact
-Phone: 213-444-0024 (call or text)
-Website: https://mvtechusa.com
-Email: tech@mvtechusa.com
+- Phone (nationwide, call or text): 213-444-0024
+- Phone (local, Las Cruces NM): 505-296-7224
+- Email: tech@mvtechusa.com
+- Website: https://mvtechusa.com
 
-## What We Do
-- Document organization — permits, policies, contracts, vendor accounts, employee records, and contacts filed and findable in seconds
-- Income tracking — every payment received (Zelle, PayPal, Venmo, Stripe, Square) identified and logged the moment it lands
-- Expense tracking — every expense and receipt processed and filed, with bill and renewal dates monitored so nothing lapses
-- Monthly operations reports — clear income, expense, and trend reports ready to hand to a tax preparer, lender, or buyer
-- Document production — quotes, invoices, forms, and business documents produced as polished, branded PDFs
-- Form conversion and document merge — turn a photo or scan into a clean fillable form; combine a stack of forms into one packet filled from a single entry
+## What MVTech does
+- Document organization — permits, licenses, policies, contracts, vendor accounts, registrations, employee records and contacts, filed and findable in seconds
+- Income tracking — every payment received (Zelle, PayPal, Venmo, Stripe, Square, checks) identified and logged as it lands, with recurring payers recognized
+- Expense tracking — every receipt and bill captured down to the individual line item, not just the total
+- Renewal tracking — license, permit, certification and insurance expiration dates monitored, with a reminder before anything lapses
+- Monthly operations reports — plain-English income, expense and trend reporting, ready to hand to a tax preparer, lender or buyer
+- Document production — quotes, invoices, intake forms, letters, listing sheets and reports produced as polished, branded PDFs in the client's own brand
+- Form conversion and document merge — a photo or scan becomes a clean fillable form; a stack of forms becomes one packet filled from a single entry
+- Advertising support (Promoted plan and up) — ads written, posted and kept running; graphics and flyers produced on request
+- Deep-dive research reports (Wingman plan, also sold à la carte) — sourced, cited, decision-ready research on a market, competitor or business question
 
-## How It Works
-1. One onboarding call sets everything up — we link the business email and a shared folder for deliverables. The owner changes nothing about how they work.
-2. The owner keeps running the business; receipts can be texted in as photos, or nothing at all.
-3. Each month the owner receives an operations report plus organized, professional documents.
+## The core differentiator: itemization
+A bank feed or card statement records that a business spent $214 at a supply store. MVTech records what was actually in the cart, line by line, because it reads the receipt itself. That level of detail is what bank feeds, card statements and store apps discard, and it is what makes job costing, category accuracy and clean tax preparation possible.
 
-## Who This Is For
-Owner-operators who wear every hat: food trucks, used car lots, home sellers going FSBO, trades, and solo businesses of every kind. Best suited to businesses under roughly six employees whose records live in a pile, a drawer, or the owner's head.
+## How it works
+1. One onboarding call, roughly an hour, walks through how the business actually runs. MVTech builds the client's folder, dashboard and document set around that.
+2. The owner keeps working exactly as before. Bills and receipts already arriving by email become line items on their own; anything on paper can be photographed and it is read and filed.
+3. On the first of each month the owner receives an operations report plus organized, professional documents. Renewal dates surface on the dashboard before they come due.
 
-## Trust and Access
-- Track, never transact — MVTech works from records only and never holds or moves money, the way an accountant reads the books without touching the bank.
-- The client owns everything; access is scoped to the work, granted by the client, and revocable at any time.
-- An NDA is available before any records are reviewed.
+There is no app to install and no new system to learn. Spreadsheets open directly in Excel or Google Sheets; documents live in an ordinary folder the client owns.
 
-## Coverage
-Nationwide — United States. All work is remote.
+## Who this is for
+Owner-operators who wear every hat, generally under about six employees: trades and contractors, food trucks and small restaurants, used car lots, solo attorneys and other professional practices, event organizers, and owners selling property For Sale By Owner. Best fit is a business whose records currently live in a pile, a truck, a drawer, or the owner's head.
 
 ## Pricing
-One-time onboarding: $495 (covers full setup, document intake, and first-month buildout). Monthly plans: Organized $195, Tracked $395, Wingman $695.
+- One-time onboarding: $495 — full setup, document intake and first-month buildout, paid before any monthly billing begins
+- Organized: $195 per month — dashboard, document filing, itemized income and expense tracking, monthly report
+- Promoted: $395 per month — everything in Organized, plus ads written/posted/kept running and graphics, flyers and custom documents on request, all in the client's brand
+- Wingman: $695 per month — everything in Promoted, plus a direct line to an MVTech rep anytime, everyday tech support for apps/devices/accounts, and a deep-dive research report and review each quarter
+
+Flat monthly pricing. No hourly billing, no per-document charges, no long-term contract.
+
+## Trust and access
+- Track, never transact — MVTech works from records only and never holds, moves or has authority to spend client money, the way an accountant reads the books without touching the bank.
+- The client owns everything. Records are kept in ordinary formats (spreadsheets and PDFs) in a folder that belongs to the client, who can leave at any time and take all of it.
+- Access is scoped to the work, granted by the client, and revocable by the client at any time.
+- An NDA is available before any records are reviewed.
+- Every document that goes out is personally reviewed by Michael Vetter.
+
+## Common questions
+Q: What does MVTech do?
+A: It handles the paper side of an owner-operated business — filing every document, tracking every dollar in and out line by line, producing the documents the business sends out, and delivering a plain-English report on the first of each month.
+
+Q: How much does it cost?
+A: A one-time $495 onboarding, then $195, $395 or $695 per month depending on plan.
+
+Q: Can MVTech access or move my money?
+A: No. MVTech is read-only where money is concerned and never holds or moves funds.
+
+Q: Do I have to learn new software?
+A: No. Nothing to install, nothing to log into. Spreadsheets open in Excel or Google Sheets.
+
+Q: How is this different from a bookkeeper or accounting software?
+A: MVTech captures itemized receipt detail that bank feeds discard, and it also handles documents, renewals and outgoing paperwork. It is not a CPA firm and does not file taxes; it hands a tax preparer clean, finished numbers.
+
+Q: Do I own my records?
+A: Yes, entirely, in ordinary formats, with no lock-in.
+
+Q: Does MVTech work outside New Mexico?
+A: Yes — anywhere in the United States. All work is remote.
+
+Q: How do I start?
+A: Call or text 213-444-0024 and ask for Michael. The first conversation is free.
+
+## Sample deliverables (public PDFs)
+- Business one-pager: https://mvtechusa.com/samples/fernandez-onepager.pdf
+- For Sale By Owner listing sheet: https://mvtechusa.com/samples/hoagland-listing.pdf
+- Deep research report: https://mvtechusa.com/samples/research-report.pdf
+- Fillable quote form: https://mvtechusa.com/samples/fernandez-quote.pdf
+- Service menu: https://mvtechusa.com/samples/service-menu.pdf
+- Legal practice one-pager: https://mvtechusa.com/samples/legal-onepager.pdf
+
+Sample documents use fictitious names and details, or are published with permission.
 
 ## Topics
-Small business bookkeeping, receipt tracking, expense logging, income tracking, document organization, business paperwork, monthly financial reports, vendor management, bill and renewal tracking, invoice and quote creation, fillable forms, owner-operator operations, fractional operations support.
+Business paperwork help, itemized receipt tracking, expense logging, income tracking, small business record keeping, document organization, monthly financial reporting, vendor management, bill and renewal tracking, license and permit expiration tracking, invoice and quote creation, fillable form conversion, document merge, For Sale By Owner listing documents, owner-operator operations, fractional operations support, small business research reports.
+
+## Pages
+- Home: https://mvtechusa.com/
+- Privacy policy: https://mvtechusa.com/privacy.html
