@@ -51,7 +51,7 @@ Owner-operators who wear every hat, generally under about six employees: trades 
 Flat monthly pricing. No hourly billing, no per-document charges, no long-term contract.
 
 ## Trust and access
-- The client owns everything. Records are kept in ordinary formats (spreadsheets and PDFs) in a folder that belongs to the client, who can leave at any time and take all of it.
+- The client owns everything. Records are kept in ordinary formats (spreadsheets and PDFs) in a folder that belongs to the client — ready to hand over when they need to prove income, apply for financing, or give a preparer a finished year.
 - Every document that goes out is personally reviewed by Michael Vetter.
 
 ## Common questions
@@ -71,7 +71,7 @@ Q: How is this different from a bookkeeper or accounting software?
 A: MVTech captures itemized receipt detail that bank feeds discard, and it also handles documents, renewals and outgoing paperwork. It is not a CPA firm and does not file taxes; it hands a tax preparer clean, finished numbers.
 
 Q: Do I own my records?
-A: Yes, entirely, in ordinary formats, with no lock-in.
+A: Yes, entirely, in ordinary formats — ready to use whenever proof of income or tax preparation calls for them.
 
 Q: Where does MVTech work?
 A: Anywhere in the United States. All work is remote.
