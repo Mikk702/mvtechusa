@@ -238,7 +238,7 @@
           "name": "What does MVTech do?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MVTech handles the paper side of an owner-operated business. We file every document — permits, policies, contracts, registrations — track every dollar in and out down to the line item, produce the quotes, invoices and forms your business sends out, and deliver a plain-English report on the first of each month. All of it is remote, and available nationwide."
+            "text": "MVTech documents every facet of your business \u2014 a production and organizational workflow system that lets you focus on your craft. The system organizes: Permits, policies, contracts and registrations. Licenses, certifications and renewal dates. Vendor records, warranties and contacts. Every dollar in and out, down to the line item. The system produces: Quote forms and estimates. Invoices and work orders. Intake forms, fillable and ready to send. Client letters, listing sheets and one-pagers. Every piece in your own brand, print-ready. The system delivers: A plain-English report on the first of each month. A dashboard of the whole business, updated daily. Reminders before a date comes due. Finished documents the day you need them. All of it is remote, and available nationwide."
           }
         },
         {
@@ -520,19 +520,17 @@ section{position:relative}
 .fcard.wide h3{margin:0}
 .fcard.wide p{margin:0;max-width:58ch;font-size:1.02rem}
 
-/* ---------- System (organizes / produces / delivers) ---------- */
-.syswrap{max-width:1180px;margin-inline:auto}
-.syscols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:3rem}
-.syscol{background:var(--card-2);border:1px solid var(--line-soft);border-radius:var(--r-lg);
-  padding:1.75rem;transition:border-color .2s var(--ease),transform .2s var(--ease)}
-.syscol:hover{border-color:#3d3357;transform:translateY(-3px)}
-.syscol h3{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-2);
-  font-weight:600;margin-bottom:1.15rem}
-.syslist{list-style:none;display:flex;flex-direction:column;gap:.8rem}
-.syslist li{display:flex;gap:.65rem;font-size:.97rem;line-height:1.45;color:var(--ink-2)}
-.syslist svg{flex:none;margin-top:4px;color:var(--gold)}
-.sysfoot{margin-top:2.4rem;text-align:center;color:var(--muted);font-size:1.02rem}
-@media(max-width:900px){.syscols{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+/* ---------- System groups (inside the FAQ answer) ---------- */
+.ansintro{margin-bottom:1.35rem;color:var(--ink-2);line-height:1.6}
+.sysgroups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem 1.6rem}
+.sysgroup h4{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-2);
+  font-weight:600;margin-bottom:.85rem}
+.syslist{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.syslist li{display:flex;gap:.55rem;font-size:.94rem;line-height:1.4;color:var(--muted)}
+.syslist svg{flex:none;margin-top:3px;color:var(--gold)}
+.ansfoot{margin-top:1.5rem;padding-top:1.15rem;border-top:1px solid var(--line-soft);
+  color:var(--ink-2);font-size:.97rem}
+@media(max-width:760px){.sysgroups{grid-template-columns:1fr;gap:1.5rem}}
 
 /* ---------- Steps ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:3rem}
@@ -546,7 +544,7 @@ section{position:relative}
 @media(max-width:900px){.steps{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
 
 /* ---------- FAQ ---------- */
-.faq{max-width:840px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.7rem}
+.faq{max-width:940px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.7rem}
 .faq details{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-md);
   transition:border-color .2s var(--ease)}
 .faq details[open]{border-color:#3d3357}
@@ -558,6 +556,8 @@ section{position:relative}
 .faq details[open] summary::after{content:"\2013"}
 .faq summary:focus-visible{outline:2px solid var(--violet-2);outline-offset:2px;border-radius:var(--r-md)}
 .faq .ans{padding:0 1.4rem 1.35rem;color:var(--muted);line-height:1.6;font-size:1rem;max-width:70ch}
+.faq .ans.wide{max-width:none}
+.ansintro{max-width:70ch}
 
 /* ---------- Founder ---------- */
 .founder .center h2{font-size:clamp(2.2rem,5.5vw,3.2rem)}
@@ -692,47 +692,6 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
         <div class="deck-dots" id="deckDots"></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- THE SYSTEM -->
-<section class="pad" id="system">
-  <div class="wrap syswrap">
-    <div class="center reveal">
-      <h2>MVTech documents <span class="grad">every facet of your business.</span></h2>
-      <p class="lead">A production and organizational workflow system that lets you focus on your craft.</p>
-    </div>
-    <div class="syscols">
-      <article class="syscol reveal">
-        <h3>The system organizes</h3>
-        <ul class="syslist">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Permits, policies, contracts and registrations</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Licenses, certifications and renewal dates</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Vendor records, warranties and contacts</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Every dollar in and out, down to the line item</li>
-        </ul>
-      </article>
-      <article class="syscol reveal">
-        <h3>The system produces</h3>
-        <ul class="syslist">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Quote forms and estimates</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Invoices and work orders</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Intake forms, fillable and ready to send</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Client letters, listing sheets and one-pagers</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Every piece in your own brand, print-ready</li>
-        </ul>
-      </article>
-      <article class="syscol reveal">
-        <h3>The system delivers</h3>
-        <ul class="syslist">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A plain-English report on the first of each month</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A dashboard of the whole business, updated daily</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Reminders before a date comes due</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Finished documents the day you need them</li>
-        </ul>
-      </article>
-    </div>
-    <p class="sysfoot reveal">All of it is remote, and available nationwide.</p>
   </div>
 </section>
 
@@ -879,7 +838,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
     <div class="faq reveal">
       <details open>
         <summary><h3>What does MVTech do?</h3></summary>
-        <div class="ans">MVTech handles the paper side of an owner-operated business. We file every document — permits, policies, contracts, registrations — track every dollar in and out down to the line item, produce the quotes, invoices and forms your business sends out, and deliver a plain-English report on the first of each month. All of it is remote, and available nationwide.</div>
+        <div class="ans wide"><p class="ansintro">MVTech documents every facet of your business — a production and organizational workflow system that lets you focus on your craft.</p><div class="sysgroups"><div class="sysgroup"><h4>The system organizes</h4><ul class="syslist"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Permits, policies, contracts and registrations</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Licenses, certifications and renewal dates</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Vendor records, warranties and contacts</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Every dollar in and out, down to the line item</li></ul></div><div class="sysgroup"><h4>The system produces</h4><ul class="syslist"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Quote forms and estimates</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Invoices and work orders</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Intake forms, fillable and ready to send</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Client letters, listing sheets and one-pagers</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Every piece in your own brand, print-ready</li></ul></div><div class="sysgroup"><h4>The system delivers</h4><ul class="syslist"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A plain-English report on the first of each month</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A dashboard of the whole business, updated daily</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Reminders before a date comes due</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Finished documents the day you need them</li></ul></div></div><p class="ansfoot">All of it is remote, and available nationwide.</p></div>
       </details>
       <details>
         <summary><h3>Who is MVTech for?</h3></summary>
