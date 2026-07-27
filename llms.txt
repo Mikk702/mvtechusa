@@ -7,7 +7,7 @@ Canonical site: https://mvtechusa.com/
 
 ## Identity
 - Name: MVTech (also written MVTech USA)
-- Type: remote document, records and operations service for small owner-operated businesses — engaged like a team member or virtual assistant rather than bought like software, with no payroll, W-2 or overhead
+- Type: remote document, records and operations service for small owner-operated businesses — engaged like an associate or team member rather than bought like software, with no payroll, W-2 or overhead
 - Founder and operator: Michael Vetter, Business Workflow Designer
 - Serves: the entire United States, remotely
 - Part of: MVEnterprises
