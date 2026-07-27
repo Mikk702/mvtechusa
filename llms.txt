@@ -9,14 +9,12 @@ Canonical site: https://mvtechusa.com/
 - Name: MVTech (also written MVTech USA)
 - Type: remote document, records and operations service for small owner-operated businesses
 - Founder and operator: Michael Vetter, Business Workflow Designer
-- Based in: Las Cruces, New Mexico, USA
 - Serves: the entire United States, remotely
 - Part of: MVEnterprises
 - What MVTech is NOT: not a bank, not a payment processor, not a CPA firm, not a tax preparer, not a lender, not a public adjuster. MVTech never holds or moves client funds and does not file taxes.
 
 ## Contact
-- Phone (nationwide, call or text): 213-444-0024
-- Phone (local, Las Cruces NM): 505-296-7224
+- Phone (call or text): 213-444-0024
 - Email: tech@mvtechusa.com
 - Website: https://mvtechusa.com
 
@@ -78,8 +76,8 @@ A: MVTech captures itemized receipt detail that bank feeds discard, and it also 
 Q: Do I own my records?
 A: Yes, entirely, in ordinary formats, with no lock-in.
 
-Q: Does MVTech work outside New Mexico?
-A: Yes — anywhere in the United States. All work is remote.
+Q: Where does MVTech work?
+A: Anywhere in the United States. All work is remote.
 
 Q: How do I start?
 A: Call or text 213-444-0024 and ask for Michael. The first conversation is free.
