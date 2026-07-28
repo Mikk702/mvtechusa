@@ -72,11 +72,26 @@ body.light::before{opacity:.42}
 
 /* ---------- scroll views ---------- */
 .views{flex:1 1 auto;position:relative;overflow:hidden}
-.view{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
+.view{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
   -webkit-overflow-scrolling:touch;padding:16px 18px 26px;
   opacity:0;visibility:hidden;transform:translateY(10px);
   transition:opacity .26s ease,transform .26s ease,visibility .26s}
 .view.on{opacity:1;visibility:visible;transform:none}
+.view.dragging{transition:none}
+.view.settling{transition:transform .34s cubic-bezier(.22,1,.36,1)}
+
+/* pull-to-refresh */
+.ptr{
+  position:absolute;top:-44px;left:50%;z-index:6;width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;pointer-events:none;
+  border:1.4px solid var(--line);background:var(--bg2);color:var(--soft);
+  transform:translate(-50%,0);opacity:0;
+  box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.ptr.settling{transition:transform .34s cubic-bezier(.22,1,.36,1),opacity .3s ease}
+.ptr.ready{border-color:var(--acc);color:var(--acc)}
+.ptr.spin{border-color:var(--acc);color:var(--acc)}
+.ptr.spin svg{animation:spin .75s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 .h{font-size:10px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;
   color:var(--soft);margin:22px 0 11px;display:flex;justify-content:space-between;align-items:center}
@@ -229,6 +244,7 @@ body.light::before{opacity:.42}
   </div>
 
   <div class="views">
+    <div class="ptr" id="ptr"></div>
     <div class="view on" id="v1"></div>
     <div class="view" id="v2"></div>
     <div class="view" id="v3"></div>
@@ -495,11 +511,80 @@ function glide(){
   g.style.transform=`translateX(${t.offsetLeft}px)`;
 }
 
-/* swipe between tabs */
-let sx=0,sy=0;
-document.querySelector('.views').addEventListener('touchstart',e=>{
-  sx=e.touches[0].clientX; sy=e.touches[0].clientY;},{passive:true});
-document.querySelector('.views').addEventListener('touchend',e=>{
+/* ---------------- gestures: swipe tabs + pull-to-refresh ---------------- */
+const viewsEl=document.querySelector('.views'), ptr=$('#ptr');
+const THRESH=68, MAXPULL=104;
+let sx=0,sy=0,atTop=false,pullY=0,pulling=false,busy=false;
+
+function ptrIcon(spin){
+  ptr.innerHTML = spin
+    ? I('<path d="M21 12a9 9 0 1 1-6.2-8.5"/>',19,2.3)
+    : I('<path d="M12 19V5"/><path d="M5 12l7-7 7 7"/>',19,2.3);
+}
+ptrIcon(false);
+
+function ptrSet(y){
+  ptr.style.transform=`translate(-50%, ${y}px)`;
+  ptr.style.opacity=Math.min(1, y/46);
+  const ic=ptr.querySelector('svg');
+  if(ic && !ptr.classList.contains('spin')) ic.style.transform=`rotate(${y*3.4}deg)`;
+}
+function ptrSettle(){
+  const v=$('#v'+CUR);
+  ptr.classList.add('settling'); v.classList.remove('dragging'); v.classList.add('settling');
+  ptr.style.transform='translate(-50%, 0)'; ptr.style.opacity='0';
+  v.style.transform='';
+  setTimeout(()=>{
+    ptr.classList.remove('settling','ready','spin'); ptrIcon(false);
+    v.classList.remove('settling'); const ic=ptr.querySelector('svg');
+    if(ic) ic.style.transform='';
+  },360);
+}
+
+async function doRefresh(){
+  if(busy) return; busy=true;
+  ptr.classList.remove('ready'); ptr.classList.add('spin'); ptrIcon(true);
+  ptr.classList.add('settling'); ptrSet(52); ptr.style.opacity='1';
+  const v=$('#v'+CUR); v.classList.remove('dragging'); v.classList.add('settling');
+  v.style.transform='translateY(30px)';
+  let fresh=false;
+  try{
+    // Data lives beside the page when hosted; inlined copy is the offline fallback.
+    const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+    if(r.ok){ Object.assign(D, await r.json()); fresh=true; }
+  }catch(e){ /* file:// or offline — keep the inlined copy */ }
+  await new Promise(r=>setTimeout(r,650));
+  paint(CUR); if(fresh) markSeen(); else stamp();
+  ptrSettle(); busy=false;
+  toast(fresh?'Updated just now':'Showing your saved copy');
+}
+
+viewsEl.addEventListener('touchstart',e=>{
+  if(busy) return;
+  sx=e.touches[0].clientX; sy=e.touches[0].clientY;
+  atTop=$('#v'+CUR).scrollTop<=0; pullY=0; pulling=false;
+},{passive:true});
+
+viewsEl.addEventListener('touchmove',e=>{
+  if(busy) return;
+  const dx=e.touches[0].clientX-sx, dy=e.touches[0].clientY-sy;
+  if(!atTop || dy<=0 || Math.abs(dy)<=Math.abs(dx)) return;
+  e.preventDefault();                      // stop the browser's own overscroll
+  if(!pulling){ pulling=true; $('#v'+CUR).classList.add('dragging'); }
+  pullY=Math.min(MAXPULL, dy*0.5);         // rubber-band damping
+  ptrSet(pullY);
+  $('#v'+CUR).style.transform=`translateY(${pullY*0.6}px)`;
+  const ready=pullY>=THRESH;
+  if(ready!==ptr.classList.contains('ready')){ ptr.classList.toggle('ready',ready); if(ready) buzz(); }
+},{passive:false});
+
+viewsEl.addEventListener('touchend',e=>{
+  if(busy) return;
+  if(pulling){
+    pulling=false;
+    if(pullY>=THRESH) doRefresh(); else ptrSettle();
+    return;
+  }
   const dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
   if(Math.abs(dx)>62 && Math.abs(dx)>Math.abs(dy)*1.8)
     go(Math.max(1,Math.min(4, CUR + (dx<0?1:-1))));
@@ -515,14 +600,21 @@ $('#themeBtn').onclick=()=>{ buzz(); setTheme(!document.body.classList.contains(
 let saved='d'; try{ saved=localStorage.getItem('mvtheme')||'d'; }catch(e){}
 setTheme(saved==='l');
 
-/* ---------------- status ---------------- */
-(function(){
-  const ok = (D.status||{}).status==='ok';
+/* ---------------- status stamp ---------------- */
+let SEEN=Date.now();
+function stamp(){
+  const ok=(D.status||{}).status==='ok';
   $('#dot').classList.toggle('bad',!ok);
-  $('#statusTxt').textContent = ok ? 'Up to date' : 'Checking in';
-})();
+  const mins=Math.floor((Date.now()-SEEN)/60000);
+  const rel = mins<1?'just now':mins===1?'1 min ago':mins<60?mins+' min ago':
+              Math.floor(mins/60)+'h ago';
+  $('#statusTxt').textContent=(ok?'Up to date':'Checking in')+' · '+rel;
+}
+function markSeen(){ SEEN=Date.now(); stamp(); }
+setInterval(stamp,30000);
 
 paint(1);
+markSeen();
 requestAnimationFrame(glide);
 </script>
 </body>
