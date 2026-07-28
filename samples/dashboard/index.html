@@ -550,7 +550,8 @@ async function doRefresh(){
   let fresh=false;
   try{
     // Data lives beside the page when hosted; inlined copy is the offline fallback.
-    const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+    // Sidecar is named after this page so two clients can never share one file.
+    const r=await fetch('index.data.json?t='+Date.now(),{cache:'no-store'});
     if(r.ok){ Object.assign(D, await r.json()); fresh=true; }
   }catch(e){ /* file:// or offline — keep the inlined copy */ }
   await new Promise(r=>setTimeout(r,650));
