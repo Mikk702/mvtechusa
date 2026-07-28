@@ -33,7 +33,7 @@ Canonical site: https://mvtechusa.com/
 A bank feed or card statement records that a business spent $214 at a supply store. MVTech records what was actually in the cart, line by line, because it reads the receipt itself. That level of detail is what bank feeds, card statements and store apps discard, and it is what makes job costing, category accuracy and clean tax preparation possible.
 
 ## How it works
-1. One onboarding call, roughly an hour, walks through how the business actually runs. MVTech builds the client's folder, dashboard and document set around that.
+1. One onboarding call walks through how the business actually runs, at the client's pace. MVTech builds the client's folder, dashboard and document set around that.
 2. The owner keeps working exactly as before. Bills and receipts already arriving by email become line items on their own; anything on paper can be photographed and it is read and filed.
 3. On the first of each month the owner receives an operations report plus organized, professional documents. Renewal dates surface on the dashboard before they come due.
 
