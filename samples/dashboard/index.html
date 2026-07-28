@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0d0d10">
+<title>Rio Vista Fence & Gate</title>
+<style>
+:root{
+  --sec:#1F6F8B; --acc:#E0A106;
+  --bg:#0c0c0f; --bg2:#141419; --card:rgba(255,255,255,.045);
+  --line:rgba(255,255,255,.10); --tx:#f2f2f4; --soft:#8b8b95;
+  --pos:#3ddc97; --neg:#ff6b6b;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+body.light{
+  --bg:#f4f4f6; --bg2:#ffffff; --card:rgba(0,0,0,.032);
+  --line:rgba(0,0,0,.10); --tx:#0d0d10; --soft:#6b6b75;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior:none}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Carlito',sans-serif;
+  background:var(--bg); color:var(--tx);
+  transition:background .35s ease,color .35s ease;
+  -webkit-font-smoothing:antialiased;
+}
+/* ambient glow */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(120% 55% at 15% -8%, color-mix(in srgb,var(--sec) 26%,transparent) 0%, transparent 60%),
+    radial-gradient(90% 45% at 110% 8%, color-mix(in srgb,var(--acc) 20%,transparent) 0%, transparent 55%);
+  opacity:.9;transition:opacity .35s ease;
+}
+body.light::before{opacity:.42}
+
+/* dvh so the phone's collapsing address bar can't clip the tab bar */
+.app{position:relative;z-index:1;height:100vh;height:100dvh;width:100%;max-width:520px;margin:0 auto;
+  display:flex;flex-direction:column;overflow:hidden}
+
+/* ---------- top bar ---------- */
+.top{
+  flex:0 0 auto;padding:calc(env(safe-area-inset-top,0px) + 14px) 18px 12px;
+  display:flex;align-items:center;gap:11px;
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+.mark{width:36px;height:36px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  border:1.4px solid var(--line);border-radius:11px;background:var(--card)}
+.mark svg{width:22px;height:22px}
+.mark svg *{stroke:var(--tx) !important}
+.brand{flex:1 1 auto;min-width:0}
+.brand-name{font-size:16.5px;font-weight:800;letter-spacing:.4px;line-height:1.1;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-name .a{color:var(--acc)}
+.brand-sub{font-size:9.5px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;
+  color:var(--soft);margin-top:3px}
+.icobtn{
+  width:36px;height:36px;flex:0 0 auto;border:1.4px solid var(--line);border-radius:11px;
+  background:var(--card);color:var(--tx);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:transform .16s ease,background .2s ease}
+.icobtn:active{transform:scale(.9)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--pos);
+  box-shadow:0 0 0 0 var(--pos);animation:pulse 2.4s infinite}
+.dot.bad{background:var(--neg);box-shadow:0 0 0 0 var(--neg)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 currentColor;opacity:1}
+  70%{box-shadow:0 0 0 9px transparent;opacity:.85}100%{box-shadow:0 0 0 0 transparent;opacity:1}}
+
+/* ---------- scroll views ---------- */
+.views{flex:1 1 auto;position:relative;overflow:hidden}
+.view{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;padding:16px 18px 26px;
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .26s ease,transform .26s ease,visibility .26s}
+.view.on{opacity:1;visibility:visible;transform:none}
+
+.h{font-size:10px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--soft);margin:22px 0 11px;display:flex;justify-content:space-between;align-items:center}
+.h:first-child{margin-top:2px}
+
+/* ---------- hero ---------- */
+.hero{
+  border:1px solid var(--line);border-radius:20px;padding:20px 20px 18px;
+  background:linear-gradient(155deg,color-mix(in srgb,var(--sec) 24%,transparent) 0%,var(--card) 55%);
+  position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-46px;right:-46px;width:150px;height:150px;
+  border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 34%,transparent),transparent 70%)}
+.hero-l{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.hero-v{font-size:47px;font-weight:800;letter-spacing:-2.4px;line-height:1.05;margin:8px 0 4px;
+  font-variant-numeric:tabular-nums}
+.hero-s{font-size:12px;font-weight:600;color:var(--soft)}
+.chip{display:inline-flex;align-items:center;gap:5px;margin-top:12px;padding:6px 11px;
+  border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.3px;
+  border:1px solid var(--line);background:var(--card)}
+.chip.up{color:var(--pos)} .chip.dn{color:var(--neg)}
+
+/* ---------- split tiles ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.tile{border:1px solid var(--line);border-radius:16px;padding:14px 15px;background:var(--card);
+  cursor:pointer;transition:transform .16s ease,border-color .2s ease}
+.tile:active{transform:scale(.97)}
+.tile-l{font-size:9.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--soft);display:flex;align-items:center;gap:5px;margin-bottom:7px}
+.tile-v{font-size:25px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.tile.in .tile-l svg{color:var(--pos)} .tile.out .tile-l svg{color:var(--neg)}
+
+/* ---------- bars ---------- */
+.bar{margin-bottom:15px;cursor:pointer}
+.bar-t{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.bar-m{font-size:13px;font-weight:700}
+.bar-n{font-size:14px;font-weight:800;font-variant-numeric:tabular-nums}
+.bar-n.pos{color:var(--pos)} .bar-n.neg{color:var(--neg)}
+.trk{height:13px;border-radius:9px;background:var(--card);border:1px solid var(--line);overflow:hidden}
+.fil{height:100%;width:0;border-radius:9px;
+  background:linear-gradient(90deg,var(--sec),var(--acc));
+  transition:width 1.05s cubic-bezier(.22,1,.36,1)}
+.fil.neg{background:linear-gradient(90deg,var(--neg),color-mix(in srgb,var(--neg) 40%,transparent))}
+.bar-lg{font-size:10.5px;font-weight:700;color:var(--soft);margin-top:6px}
+
+/* ---------- filter chips ---------- */
+.filters{display:flex;gap:8px;margin-bottom:6px}
+.f{flex:1 1 0;padding:9px 0;border-radius:11px;border:1px solid var(--line);background:var(--card);
+  color:var(--soft);font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
+  cursor:pointer;transition:all .2s ease}
+.f.on{color:var(--tx);border-color:color-mix(in srgb,var(--acc) 70%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--sec) 30%,transparent),var(--card))}
+
+/* ---------- rows ---------- */
+.row{display:flex;align-items:center;gap:12px;padding:13px 14px;margin-bottom:9px;
+  border:1px solid var(--line);border-radius:15px;background:var(--card);
+  cursor:pointer;transition:transform .16s ease,border-color .2s ease;
+  animation:rise .4s cubic-bezier(.22,1,.36,1) both}
+.row:active{transform:scale(.975)}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.row-i{flex:0 0 38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:linear-gradient(155deg,color-mix(in srgb,var(--sec) 26%,transparent),transparent)}
+.row-i.pos{color:var(--pos)} .row-i.neg{color:var(--neg)} .row-i.br{color:var(--acc)}
+.row-m{flex:1 1 auto;min-width:0}
+.row-t{font-size:13.5px;font-weight:700;line-height:1.3;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.row-s{font-size:10.5px;font-weight:600;color:var(--soft);margin-top:3px}
+.row-r{flex:0 0 auto;text-align:right}
+.row-a{font-size:13.5px;font-weight:800;font-variant-numeric:tabular-nums}
+.row-a.pos{color:var(--pos)} .row-a.neg{color:var(--neg)}
+.row-w{font-size:10px;font-weight:600;color:var(--soft);margin-top:3px}
+.row-w.warn{color:var(--neg)}
+
+/* expiry ring */
+.ring{position:relative;width:38px;height:38px;flex:0 0 38px}
+.ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring .bgc{stroke:var(--line)} .ring .fgc{stroke:var(--acc);transition:stroke-dashoffset 1.1s cubic-bezier(.22,1,.36,1)}
+.ring.warn .fgc{stroke:var(--neg)}
+.ring i{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:800;font-style:normal}
+
+/* ---------- action buttons ---------- */
+.act{display:flex;align-items:center;gap:13px;padding:15px;margin-bottom:10px;
+  border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--tx);
+  background:linear-gradient(155deg,color-mix(in srgb,var(--sec) 20%,transparent),var(--card));
+  cursor:pointer;transition:transform .16s ease}
+.act:active{transform:scale(.975)}
+.act-i{flex:0 0 40px;height:40px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);color:var(--acc);background:var(--card)}
+.act-m{flex:1 1 auto;min-width:0}
+.act-t{font-size:14px;font-weight:800;letter-spacing:.2px}
+.act-s{font-size:10.5px;font-weight:600;color:var(--soft);margin-top:3px}
+.act-g{flex:0 0 auto;color:var(--soft)}
+
+.empty{border:1px dashed var(--line);border-radius:15px;padding:26px 18px;text-align:center;
+  font-size:12.5px;font-weight:600;color:var(--soft);line-height:1.55}
+
+/* ---------- tab bar ---------- */
+.tabs{
+  flex:0 0 auto;display:flex;align-items:center;justify-content:space-around;
+  padding:9px 14px calc(9px + var(--safe-b));
+  border-top:1px solid var(--line);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);position:relative}
+.tab{width:56px;height:42px;border:none;background:none;color:var(--soft);
+  display:flex;align-items:center;justify-content:center;border-radius:13px;cursor:pointer;
+  transition:color .24s ease,transform .18s ease;position:relative;z-index:2}
+.tab:active{transform:scale(.88)}
+.tab.on{color:var(--tx)}
+.tab.on svg{filter:drop-shadow(0 0 9px color-mix(in srgb,var(--acc) 75%,transparent))}
+.glider{position:absolute;top:9px;left:0;height:42px;width:56px;border-radius:13px;z-index:1;
+  border:1px solid color-mix(in srgb,var(--acc) 60%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--sec) 34%,transparent),transparent);
+  transition:transform .38s cubic-bezier(.34,1.4,.5,1)}
+
+/* ---------- detail sheet ---------- */
+.scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.55);
+  backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}
+.scrim.on{opacity:1;visibility:visible}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;max-width:520px;margin:0 auto;
+  background:var(--bg2);border-radius:26px 26px 0 0;border-top:1px solid var(--line);
+  padding:12px 20px calc(26px + var(--safe-b));
+  transform:translateY(100%);transition:transform .42s cubic-bezier(.22,1,.36,1);
+  max-height:82%;overflow-y:auto}
+.sheet.on{transform:none}
+.grab{width:40px;height:4px;border-radius:3px;background:var(--line);margin:0 auto 16px}
+.sh-t{font-size:20px;font-weight:800;letter-spacing:-.4px;line-height:1.25;margin-bottom:5px}
+.sh-s{font-size:12px;font-weight:600;color:var(--soft);margin-bottom:17px}
+.kv{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.kv:last-of-type{border-bottom:none}
+.kv-k{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--soft)}
+.kv-v{font-size:13px;font-weight:700;text-align:right}
+
+.toast{position:fixed;left:50%;bottom:100px;z-index:60;transform:translate(-50%,16px);
+  background:var(--bg2);border:1px solid var(--line);border-radius:13px;padding:11px 18px;
+  font-size:12.5px;font-weight:700;opacity:0;visibility:hidden;
+  transition:all .3s cubic-bezier(.22,1,.36,1);box-shadow:0 10px 34px rgba(0,0,0,.4)}
+.toast.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="top">
+    <div class="mark"><svg width="22" height="22" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="36" height="36" fill="none" stroke="#000" stroke-width="1.8" rx="2"/><line x1="3" y1="11" x2="11" y2="3" stroke="#000" stroke-width="1.2" opacity=".65"/><line x1="3" y1="20" x2="20" y2="3" stroke="#000" stroke-width="1.2" opacity=".65"/><line x1="3" y1="29" x2="29" y2="3" stroke="#000" stroke-width="1.2" opacity=".65"/><line x1="3" y1="38" x2="38" y2="3" stroke="#000" stroke-width="1.2" opacity=".65"/></svg></div>
+    <div class="brand">
+      <div class="brand-name">RIO VISTA <span class="a">FENCE & GATE</span></div>
+      <div class="brand-sub"><span class="dot" id="dot"></span>&nbsp; <span id="statusTxt">Up to date</span></div>
+    </div>
+    <button class="icobtn" id="themeBtn" aria-label="Theme"></button>
+  </div>
+
+  <div class="views">
+    <div class="view on" id="v1"></div>
+    <div class="view" id="v2"></div>
+    <div class="view" id="v3"></div>
+    <div class="view" id="v4"></div>
+  </div>
+
+  <div class="tabs" id="tabs"><div class="glider" id="glider"></div></div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet"><div class="grab"></div><div id="sheetBody"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const D = {"month": {"month": "July 2026", "income": 18400.0, "expenses": 7215.44, "net": 11184.56}, "months": [{"month": "July 2026", "income": 18400.0, "expenses": 7215.44, "net": 11184.56}, {"month": "June 2026", "income": 14250.0, "expenses": 8930.12, "net": 5319.88}, {"month": "May 2026", "income": 9875.0, "expenses": 6402.77, "net": 3472.23}, {"month": "April 2026", "income": 11200.0, "expenses": 7788.05, "net": 3411.95}, {"month": "March 2026", "income": 6400.0, "expenses": 7010.33, "net": -610.33}, {"month": "February 2026", "income": 5150.0, "expenses": 4980.6, "net": 169.4}], "activity": [{"ts": "2026-07-24T14:20:00", "kind": "income", "summary": "Client Payment $6,800.00 — Sunridge HOA", "success": true}, {"ts": "2026-07-23T09:05:00", "kind": "expense", "summary": "Materials $1,284.62 — Home Depot", "success": true}, {"ts": "2026-07-21T16:44:00", "kind": "income", "summary": "Client Payment $3,200.00 — Delgado Ranch", "success": true}, {"ts": "2026-07-19T11:12:00", "kind": "expense", "summary": "Automotive $212.88 — Discount Tire", "success": true}, {"ts": "2026-07-17T08:30:00", "kind": "expense", "summary": "Materials $946.10 — Lowe's", "success": true}, {"ts": "2026-07-15T13:55:00", "kind": "income", "summary": "Client Payment $4,150.00 — Copper Ridge Estates", "success": true}, {"ts": "2026-07-12T10:02:00", "kind": "expense", "summary": "Fuel $118.40 — Chevron", "success": true}, {"ts": "2026-07-09T15:31:00", "kind": "income", "summary": "Client Payment $4,250.00 — Mesa Verde Property Mgmt", "success": true}, {"ts": "2026-07-06T07:48:00", "kind": "expense", "summary": "Materials $2,105.33 — Southwest Steel Supply", "success": true}], "documents": [{"name": "Contractor License — GB-98 General Building", "issuer": "State Licensing Board", "doc_number": "GB98-4471902", "effective": "2026-02-01", "expiration": "2027-02-01", "subject": null}, {"name": "General Liability Insurance — Certificate of Insurance", "issuer": "Sample Mutual Insurance", "doc_number": "COI-2026-88213", "effective": "2026-04-01", "expiration": "2027-04-01", "subject": "$2,000,000 per occurrence"}, {"name": "Commercial Auto Policy — F-350 & Trailer", "issuer": "Sample Mutual Insurance", "doc_number": "CA-2026-33107", "effective": "2026-01-10", "expiration": "2026-09-10", "subject": null}, {"name": "Workers Compensation Coverage", "issuer": "State Fund", "doc_number": "WC-2026-55420", "effective": "2026-03-15", "expiration": "2027-03-15", "subject": null}], "upcoming": [{"date": "2026-09-10", "label": "Commercial auto policy renewal", "note": "F-350 & equipment trailer", "type": "event"}, {"date": "2026-10-01", "label": "Quarterly tax deposit", "note": "Q3 estimated payment", "type": "event"}, {"date": "2027-02-01", "label": "Contractor license renewal", "note": "Renew before expiration", "type": "event"}], "status": {"status": "ok", "reason": "sample", "minutes_ago": 2}, "folder": "#", "intake": "hello@mvtechusa.com"};
+
+/* ---------------- icons ---------------- */
+const I = (p,s=22,w=1.9)=>`<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none"
+  stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const P = {
+  money:'<path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/>',
+  act:'<path d="M2 12h4l3 8 4-16 3 8h6"/>',
+  docs:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/>',
+  cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/>',
+  up:'<path d="M12 19V5"/><path d="M5 12l7-7 7 7"/>',
+  down:'<path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/>',
+  folder:'<path d="M3 7a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+  mail:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 7l10 7 10-7"/>',
+  phone:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/>',
+  chev:'<path d="M9 5l7 7-7 7"/>',
+  sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>'
+};
+
+/* ---------------- helpers ---------------- */
+const $ = s=>document.querySelector(s);
+const money = v => (v<0?'-':'') + '$' + Math.abs(Math.round(v)).toLocaleString();
+const money2 = v => (v<0?'-':'') + '$' + Math.abs(v).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+function mdy(s){ if(!s) return ''; const d=new Date(String(s).slice(0,10)+'T00:00:00');
+  return isNaN(d)?s:`${d.getMonth()+1}/${d.getDate()}/${d.getFullYear()}`; }
+function days(s){ const d=new Date(String(s).slice(0,10)+'T00:00:00');
+  return Math.round((d-new Date(new Date().toDateString()))/864e5); }
+function toast(t){ const e=$('#toast'); e.textContent=t; e.classList.add('on');
+  clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove('on'),1900); }
+function buzz(){ if(navigator.vibrate) navigator.vibrate(9); }
+
+/* count-up */
+function countUp(el, val){
+  const dur=900, t0=performance.now(), neg=val<0;
+  (function step(t){
+    const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3);
+    el.textContent = money(val*e);
+    if(p<1) requestAnimationFrame(step); else el.textContent=money(val);
+  })(t0);
+}
+
+/* ---------------- views ---------------- */
+function viewMoney(){
+  const m = D.month||{}, ms = D.months||[];
+  const prev = ms[1]||null;
+  let delta='';
+  if(prev && typeof prev.net==='number' && prev.net!==m.net){
+    const diff = m.net - prev.net, up = diff>=0, mo = String(prev.month).split(' ')[0];
+    // A % swing off a zero or negative base is meaningless — show the dollar move instead.
+    const txt = prev.net>0 ? `${Math.abs(diff/prev.net*100).toFixed(0)}% vs ${mo}`
+                           : `${up?'+':'-'}${money(Math.abs(diff))} vs ${mo}`;
+    delta = `<div class="chip ${up?'up':'dn'}">${I(P[up?'up':'down'],12,2.6)} ${txt}</div>`;
+  }
+  const peak = Math.max(1, ...ms.map(x=>Math.abs(x.net||0)));
+  const bars = ms.slice(0,6).map((x,i)=>{
+    const pct = Math.max(3, Math.min(100, Math.abs(x.net||0)/peak*100));
+    return `<div class="bar" data-bar="${i}">
+      <div class="bar-t"><span class="bar-m">${x.month}</span>
+        <span class="bar-n ${x.net>=0?'pos':'neg'}">${money(x.net)}</span></div>
+      <div class="trk"><div class="fil ${x.net<0?'neg':''}" data-w="${pct}"></div></div>
+      <div class="bar-lg">In ${money(x.income)} &nbsp;·&nbsp; Out ${money(x.expenses)}</div></div>`;
+  }).join('');
+
+  return `<div class="hero">
+      <div class="hero-l">Net — ${m.month||''}</div>
+      <div class="hero-v" id="heroV">$0</div>
+      <div class="hero-s">Money in, minus money out</div>${delta}
+    </div>
+    <div class="two">
+      <div class="tile in" data-flt="income"><div class="tile-l">${I(P.up,12,2.6)} Came In</div>
+        <div class="tile-v">${money(m.income)}</div></div>
+      <div class="tile out" data-flt="expense"><div class="tile-l">${I(P.down,12,2.6)} Went Out</div>
+        <div class="tile-v">${money(m.expenses)}</div></div>
+    </div>
+    <div class="h"><span>Trend</span><span>Net</span></div>${bars}
+    <a class="act" href="${D.folder}" target="_blank">
+      <span class="act-i">${I(P.folder,19)}</span>
+      <span class="act-m"><span class="act-t">My Folder</span>
+      <span class="act-s">Receipts, documents, reports</span></span>
+      <span class="act-g">${I(P.chev,17,2.4)}</span></a>`;
+}
+
+let FLT='all';
+function viewActivity(){
+  const a = (D.activity||[]).filter(x=> FLT==='all' || x.kind===FLT);
+  const rows = a.length ? a.map((x,i)=>{
+    const inc = x.kind==='income';
+    const amt = (String(x.summary).match(/\$[\d,]+\.?\d*/)||[''])[0];
+    const t = String(x.summary).replace(amt,'').replace('—','').trim().replace(/^[-·\s]+/,'');
+    return `<div class="row" data-act="${i}" style="animation-delay:${i*38}ms">
+      <div class="row-i ${inc?'pos':'neg'}">${I(P[inc?'up':'down'],17,2.2)}</div>
+      <div class="row-m"><div class="row-t">${t}</div>
+        <div class="row-s">${inc?'Payment received':'Receipt filed'}</div></div>
+      <div class="row-r"><div class="row-a ${inc?'pos':'neg'}">${amt}</div>
+        <div class="row-w">${mdy(x.ts)}</div></div></div>`;
+  }).join('') : `<div class="empty">Nothing here yet.<br>Payments and receipts you send in
+      show up automatically.</div>`;
+  return `<div class="h"><span>Recent Activity</span><span>${a.length} items</span></div>
+    <div class="filters">
+      <button class="f ${FLT==='all'?'on':''}" data-f="all">All</button>
+      <button class="f ${FLT==='income'?'on':''}" data-f="income">In</button>
+      <button class="f ${FLT==='expense'?'on':''}" data-f="expense">Out</button>
+    </div>${rows}`;
+}
+
+function viewDocs(){
+  const d = D.documents||[];
+  const rows = d.length ? d.map((x,i)=>{
+    let ring='', warn=false;
+    if(x.expiration){
+      const dl = days(x.expiration); warn = dl<=60;
+      const pct = Math.max(0,Math.min(1, dl/365));
+      const C=2*Math.PI*15;
+      ring = `<div class="ring ${warn?'warn':''}">
+        <svg viewBox="0 0 38 38"><circle class="bgc" cx="19" cy="19" r="15" fill="none" stroke-width="2.6"/>
+        <circle class="fgc" cx="19" cy="19" r="15" fill="none" stroke-width="2.6" stroke-linecap="round"
+          stroke-dasharray="${C}" stroke-dashoffset="${C}" data-off="${C*(1-pct)}"/></svg>
+        <i>${dl>999?'1y+':dl+'d'}</i></div>`;
+    } else ring = `<div class="row-i br">${I(P.docs,17,2)}</div>`;
+    return `<div class="row" data-doc="${i}" style="animation-delay:${i*38}ms">${ring}
+      <div class="row-m"><div class="row-t">${x.name||''}</div>
+        <div class="row-s">${[x.doc_number,x.issuer].filter(Boolean).join(' · ')}</div></div>
+      <div class="row-r"><div class="row-w ${warn?'warn':''}">${x.expiration?(warn?'Renew ':'Good to ')+mdy(x.expiration):''}</div></div>
+    </div>`;
+  }).join('') : `<div class="empty">No documents yet.<br>Send in your insurance certificate,
+      registration and license — they land here.</div>`;
+  return `<div class="h"><span>Documents On File</span><span>${d.length} items</span></div>${rows}
+    <a class="act" href="${D.folder}" target="_blank">
+      <span class="act-i">${I(P.folder,19)}</span>
+      <span class="act-m"><span class="act-t">Open Documents Folder</span>
+      <span class="act-s">Pull any of these up in seconds</span></span>
+      <span class="act-g">${I(P.chev,17,2.4)}</span></a>`;
+}
+
+function viewUp(){
+  const u = D.upcoming||[];
+  const rows = u.length ? u.map((x,i)=>{
+    const dl = days(x.date), warn = dl<=30;
+    const rel = dl>1?`in ${dl} days`:dl===1?'tomorrow':dl===0?'today':'past due';
+    return `<div class="row" data-up="${i}" style="animation-delay:${i*38}ms">
+      <div class="row-i br">${I(P.cal,17,2)}</div>
+      <div class="row-m"><div class="row-t">${x.label||''}</div>
+        <div class="row-s">${x.note||''}</div></div>
+      <div class="row-r"><div class="row-a">${mdy(x.date)}</div>
+        <div class="row-w ${warn?'warn':''}">${rel}</div></div></div>`;
+  }).join('') : `<div class="empty">Nothing on the calendar.<br>Renewals and deadlines
+      appear here before they matter.</div>`;
+  const gcal = u.length ? (()=>{ const x=u[0], y=String(x.date).slice(0,10).replace(/-/g,'');
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(x.label)}&dates=${y}/${y}`;
+  })() : null;
+  return `<div class="h"><span>Coming Up</span></div>${rows}
+    <div class="h"><span>One Tap</span></div>
+    ${gcal?`<a class="act" href="${gcal}" target="_blank"><span class="act-i">${I(P.cal,19)}</span>
+      <span class="act-m"><span class="act-t">Add To My Calendar</span>
+      <span class="act-s">${u[0].label}</span></span>
+      <span class="act-g">${I(P.chev,17,2.4)}</span></a>`:''}
+    <a class="act" href="mailto:${D.intake}?subject=Receipt">
+      <span class="act-i">${I(P.mail,19)}</span>
+      <span class="act-m"><span class="act-t">Send In A Receipt</span>
+      <span class="act-s">Forward it — we do the rest</span></span>
+      <span class="act-g">${I(P.chev,17,2.4)}</span></a>
+    <a class="act" href="tel:2134440024">
+      <span class="act-i">${I(P.phone,19)}</span>
+      <span class="act-m"><span class="act-t">Call Us</span>
+      <span class="act-s">(213) 444-0024</span></span>
+      <span class="act-g">${I(P.chev,17,2.4)}</span></a>`;
+}
+
+/* ---------------- render + animate ---------------- */
+const VIEWS=[viewMoney,viewActivity,viewDocs,viewUp];
+function paint(n){
+  const el = $('#v'+n);
+  el.innerHTML = VIEWS[n-1]();
+  requestAnimationFrame(()=>{
+    el.querySelectorAll('.fil').forEach(f=>f.style.width=f.dataset.w+'%');
+    el.querySelectorAll('.ring .fgc').forEach(c=>c.style.strokeDashoffset=c.dataset.off);
+    const hv = el.querySelector('#heroV');
+    if(hv) countUp(hv, (D.month||{}).net||0);
+  });
+  wire(el);
+}
+
+/* ---------------- detail sheet ---------------- */
+function openSheet(title, sub, kv){
+  $('#sheetBody').innerHTML = `<div class="sh-t">${title}</div><div class="sh-s">${sub}</div>` +
+    kv.filter(r=>r[1]).map(r=>`<div class="kv"><span class="kv-k">${r[0]}</span>
+      <span class="kv-v">${r[1]}</span></div>`).join('');
+  $('#sheet').classList.add('on'); $('#scrim').classList.add('on'); buzz();
+}
+function closeSheet(){ $('#sheet').classList.remove('on'); $('#scrim').classList.remove('on'); }
+$('#scrim').onclick = closeSheet;
+
+function wire(el){
+  el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{
+    FLT=b.dataset.f; buzz(); paint(2); });
+  el.querySelectorAll('[data-flt]').forEach(t=>t.onclick=()=>{
+    FLT=t.dataset.flt; go(2); toast(FLT==='income'?'Showing money in':'Showing money out'); });
+  el.querySelectorAll('[data-act]').forEach(r=>r.onclick=()=>{
+    const x=(D.activity||[])[+r.dataset.act], inc=x.kind==='income';
+    const amt=(String(x.summary).match(/\$[\d,]+\.?\d*/)||[''])[0];
+    openSheet(String(x.summary).replace(amt,'').replace('—','').trim().replace(/^[-·\s]+/,''),
+      inc?'Payment received':'Receipt filed and categorized',
+      [['Amount',amt],['Date',mdy(x.ts)],['Type',inc?'Money in':'Money out'],
+       ['Status','Recorded in your books']]);
+  });
+  el.querySelectorAll('[data-doc]').forEach(r=>r.onclick=()=>{
+    const x=(D.documents||[])[+r.dataset.doc];
+    const dl = x.expiration?days(x.expiration):null;
+    openSheet(x.name||'Document', x.issuer||'On file',
+      [['Number',x.doc_number],['Issued',mdy(x.effective)],['Expires',mdy(x.expiration)],
+       ['Status', dl==null?'On file':(dl<0?'Expired':dl<=60?`Renew — ${dl} days left`:`Current — ${dl} days left`)],
+       ['Covers',x.subject]]);
+  });
+  el.querySelectorAll('[data-up]').forEach(r=>r.onclick=()=>{
+    const x=(D.upcoming||[])[+r.dataset.up], dl=days(x.date);
+    openSheet(x.label||'', x.note||'',
+      [['Date',mdy(x.date)],['Countdown', dl>0?`${dl} days`:dl===0?'Today':'Past due'],
+       ['Type','Renewal / deadline']]);
+  });
+  el.querySelectorAll('[data-bar]').forEach(r=>r.onclick=()=>{
+    const x=(D.months||[])[+r.dataset.bar];
+    openSheet(x.month, 'Month summary',
+      [['Money in',money2(x.income)],['Money out',money2(x.expenses)],
+       ['Net',money2(x.net)],['Margin', x.income? Math.round(x.net/x.income*100)+'%':'—']]);
+  });
+}
+
+/* ---------------- tabs ---------------- */
+const TABS=[['money','Money'],['act','Activity'],['docs','Documents'],['cal','Coming Up']];
+const tabsEl=$('#tabs');
+TABS.forEach(([ic],i)=>{
+  const b=document.createElement('button');
+  b.className='tab'+(i===0?' on':''); b.innerHTML=I(P[ic],23,1.9);
+  b.onclick=()=>go(i+1); tabsEl.appendChild(b);
+});
+let CUR=1;
+function go(n){
+  if(n===CUR){ $('#v'+n).scrollTo({top:0,behavior:'smooth'}); return; }
+  buzz();
+  $('#v'+CUR).classList.remove('on');
+  paint(n); $('#v'+n).classList.add('on'); $('#v'+n).scrollTop=0;
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===n-1));
+  CUR=n; glide();
+}
+function glide(){
+  const t=document.querySelectorAll('.tab')[CUR-1], g=$('#glider');
+  if(!t) return;
+  g.style.width=t.offsetWidth+'px';
+  g.style.transform=`translateX(${t.offsetLeft}px)`;
+}
+
+/* swipe between tabs */
+let sx=0,sy=0;
+document.querySelector('.views').addEventListener('touchstart',e=>{
+  sx=e.touches[0].clientX; sy=e.touches[0].clientY;},{passive:true});
+document.querySelector('.views').addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+  if(Math.abs(dx)>62 && Math.abs(dx)>Math.abs(dy)*1.8)
+    go(Math.max(1,Math.min(4, CUR + (dx<0?1:-1))));
+},{passive:true});
+
+/* ---------------- theme ---------------- */
+function setTheme(light){
+  document.body.classList.toggle('light',light);
+  $('#themeBtn').innerHTML = I(light?P.moon:P.sun,18,2);
+  try{ localStorage.setItem('mvtheme',light?'l':'d'); }catch(e){}
+}
+$('#themeBtn').onclick=()=>{ buzz(); setTheme(!document.body.classList.contains('light')); };
+let saved='d'; try{ saved=localStorage.getItem('mvtheme')||'d'; }catch(e){}
+setTheme(saved==='l');
+
+/* ---------------- status ---------------- */
+(function(){
+  const ok = (D.status||{}).status==='ok';
+  $('#dot').classList.toggle('bad',!ok);
+  $('#statusTxt').textContent = ok ? 'Up to date' : 'Checking in';
+})();
+
+paint(1);
+requestAnimationFrame(glide);
+</script>
+</body>
+</html>
