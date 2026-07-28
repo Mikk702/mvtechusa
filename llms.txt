@@ -24,8 +24,8 @@ Canonical site: https://mvtechusa.com/
 - Expense tracking — every receipt and bill captured down to the individual line item, not just the total
 - Renewal tracking — license, permit, certification and insurance expiration dates monitored, with a reminder before anything lapses
 - Monthly operations reports — plain-English income, expense and trend reporting, ready to hand to a tax preparer, lender or buyer
-- Document production — quotes, invoices, intake forms, letters, listing sheets and reports produced as polished, branded PDFs in the client's own brand
-- Form conversion and document merge — a photo or scan becomes a clean fillable form; a stack of forms becomes one packet filled from a single entry
+- Custom document production — quotes, invoices, intake forms, letters, listing sheets and reports, each built to order and produced as polished, branded PDFs in the client's own brand
+- Form conversion and document merge — a photo or scan becomes a clean custom fillable form; a stack of forms becomes one packet filled from a single entry
 - Advertising support (Promoted plan and up) — ads written, posted and kept running; graphics and flyers produced on request
 - Deep-dive research reports (Team Member plan, also sold à la carte) — sourced, cited, decision-ready research on a market, competitor or business question
 
