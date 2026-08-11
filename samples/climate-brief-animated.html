@@ -1,0 +1,318 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Las Cruces Climate, 1976–2025 — animated brief</title>
+<style>
+:root{--p:#000;--s:#3c2878;--a:#b48c3c;--t:#1a1a1a;--soft:#7a7a7a;--div:#e0e0e0;--paper:#faf8f4;--dark:#2b1e50}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000}
+#lc-anim{position:relative;width:100%;height:100%;overflow:hidden;background:#000;display:grid;place-items:center}
+#stage{width:1280px;height:640px;position:absolute;left:0;top:0;overflow:hidden;background:var(--paper);font-family:'Calibri','Carlito','Segoe UI',Arial,sans-serif;color:var(--t);opacity:0;transform-origin:0 0}
+#overlay{position:absolute;inset:0;background:var(--paper);opacity:0;z-index:50;pointer-events:none}
+#hdr{position:absolute;top:0;left:0;right:0;height:40px;display:flex;align-items:flex-end;justify-content:space-between;padding:6px 28px 0;border-bottom:1.5px solid var(--a);background:linear-gradient(180deg,rgba(60,40,120,.06),rgba(255,255,255,0));z-index:20;color:var(--p)}
+#hdr .wm{font-size:26px;font-weight:700;letter-spacing:3px;transform:skewX(-18deg);line-height:1;color:var(--p)}
+#hdr .wm span{color:var(--s)}
+#hdr .wmsub{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--p);margin-top:2px}
+#hdr .hlabel{position:absolute;left:50%;transform:translateX(-50%);bottom:7px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:3.4px;color:var(--s);transition:opacity .3s}
+#hdr.onDark .hlabel{opacity:0}
+#hdr .ct{font-size:12.5px;text-align:right;border-left:1px solid var(--div);padding-left:14px;line-height:1.5;color:var(--p)}
+#hdr.onDark{color:#fff;border-bottom-color:rgba(180,140,60,.65)}
+#hdr.onDark .wm,#hdr.onDark .wm span,#hdr.onDark .wmsub,#hdr.onDark .ct{color:#fff}
+#hdr.onDark .ct{border-left-color:rgba(255,255,255,.25)}
+#hdr.onDark .wm span{color:var(--a)}
+.scene{position:absolute;inset:0;opacity:0;z-index:10}
+#sc-title,#sc-outro{background:radial-gradient(120% 90% at 50% -10%,#4b3490 0%,var(--dark) 55%,#211745 100%);color:#fff}
+#sc-title::after,#sc-outro::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 45% at 80% 20%,rgba(180,140,60,.16),transparent 70%);pointer-events:none}
+.kicker{font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--a);font-weight:700}
+h1.t{font-size:38px;margin:4px 0 0;color:var(--p);line-height:1.1;font-weight:700;letter-spacing:.3px}
+.rule{height:3px;width:56px;background:var(--a);border-radius:2px;margin-top:7px;transform-origin:left center}
+.content{padding:52px 70px 0}
+.catbox{border:1.5px solid var(--a);border-radius:12px;padding:6px;background:linear-gradient(180deg,rgba(60,40,120,.06),rgba(255,255,255,0));box-shadow:0 10px 30px rgba(0,0,0,.05);margin-top:12px}
+.catbox svg{width:100%;height:auto;display:block}
+.chips{display:flex;gap:16px;margin-top:14px}
+.chip{flex:1;border:1.5px solid var(--a);border-radius:10px;background:linear-gradient(180deg,rgba(60,40,120,.10),rgba(255,255,255,0));padding:12px 16px 11px;opacity:0}
+.chip .cn{font-size:36px;font-weight:700;color:var(--p);line-height:1;white-space:nowrap}
+.chip .cn b{color:var(--s)}
+.chip .cn i{font-style:normal}
+.chip .ck{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p);font-weight:700;margin-top:4px}
+.g{stroke:var(--div);stroke-width:1}
+.ax{font-size:18px;font-weight:600;fill:var(--p);font-family:inherit}
+.area{fill:url(#gradT)}
+.line{fill:none;stroke:var(--s);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.trend{fill:none;stroke:var(--soft);stroke-width:2;stroke-dasharray:7 5}
+.dot{fill:var(--s);stroke:#fff;stroke-width:1.6}
+.head{fill:var(--s);stroke:#fff;stroke-width:2}
+.mk{fill:var(--s);stroke:#fff;stroke-width:1.4}
+.lbl{font-size:18px;font-weight:700;fill:var(--p);font-family:inherit}
+.lbl .hl{fill:var(--a)}
+.leg{font-size:17px;font-weight:700;fill:var(--p);font-family:inherit}
+.sw{stroke-width:3}
+.series-s{stroke:var(--s)}
+.trend-s{stroke:var(--soft);stroke-dasharray:6 4}
+.bar-s{stroke:none;fill:var(--s)}
+.bar{fill:var(--s)}
+.mean{stroke:var(--soft);stroke-width:2;stroke-dasharray:7 5}
+.lead{stroke:var(--a);stroke-width:1.4;stroke-dasharray:4 3}
+#pb{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(0,0,0,.08);z-index:30;opacity:0}
+#pbFill{height:100%;width:100%;background:linear-gradient(90deg,var(--a),var(--s));transform-origin:left center;transform:scaleX(0)}
+/* title */
+.tl-wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 120px}
+.tl-tag{display:flex;align-items:center;gap:22px;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:5px;color:#fff;opacity:0}
+.tl-tag:before,.tl-tag:after{content:"";width:70px;height:1px;background:var(--a)}
+.tl-wm{font-size:30px;font-weight:700;letter-spacing:5px;transform:skewX(-18deg);color:#fff;margin-top:34px;opacity:0}
+.tl-wm i{font-style:normal;color:var(--a)}
+.tl-wmsub{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.65);margin-top:3px;opacity:0}
+.tl-h1{font-size:72px;font-weight:700;color:#fff;line-height:1.06;margin-top:34px;letter-spacing:.5px;opacity:0}
+.tl-h1 span{color:var(--a)}
+.tl-sub{font-size:25px;color:rgba(255,255,255,.86);margin-top:18px;opacity:0}
+.tl-sub b{color:#fff}
+.tl-meta{margin-top:38px;font-size:15px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);opacity:0}
+.tl-meta b{color:var(--a);font-weight:700}
+/* outro */
+.ot-wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 120px}
+.ot-1{font-size:58px;font-weight:700;color:#fff;line-height:1.2;opacity:0}
+.ot-2{font-size:58px;font-weight:700;color:#fff;line-height:1.2;opacity:0}
+.ot-2 span{color:var(--a)}
+.ot-sup{font-size:23px;color:rgba(255,255,255,.85);max-width:1120px;margin-top:24px;line-height:1.5;opacity:0}
+.ot-sup b{color:#fff}
+.ot-pills{display:flex;gap:26px;margin-top:46px}
+.ot-pill{border:1.5px solid rgba(180,140,60,.7);border-radius:12px;background:rgba(255,255,255,.06);padding:22px 36px;opacity:0;min-width:376px}
+.ot-pill .n{font-size:34px;font-weight:700;color:var(--a)}
+.ot-pill .k{font-size:16px;color:rgba(255,255,255,.85);margin-top:4px;line-height:1.4}
+.ot-foot{position:absolute;bottom:40px;left:0;right:0;text-align:center;font-size:15px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.5);opacity:0}
+</style>
+
+<div id="lc-anim">
+<div id="stage">
+  <div id="hdr">
+    <div><div class="wm">MV<span>TECH</span></div><div class="wmsub">Business Document Services</div></div>
+    <div class="hlabel">Research Brief</div>
+<div class="ct"><b>213-444-0024</b><br>MVTechUSA.com</div>
+  </div>
+
+  <div id="sc-title" class="scene">
+    <div class="tl-wrap">
+      <div class="tl-tag">Research Brief</div>
+      <div class="tl-wm">MV<i>TECH</i></div>
+      <div class="tl-wmsub">Business Document Services</div>
+      <div class="tl-h1">Las Cruces Climate,<br>1976<span>–</span>2025</div>
+      <div class="tl-sub">Peak heat &amp; rainfall in <b>New Mexico's second-largest city</b></div>
+      <div class="tl-meta">50 years &nbsp;·&nbsp; NMSU station &nbsp;·&nbsp; <b>NOAA / RCC-ACIS</b></div>
+    </div>
+  </div>
+
+  <div id="sc-temp" class="scene">
+    <div class="content">
+      <div class="kicker k-t">Climate Data Analysis</div>
+      <h1 class="t t-t">Peak Temperature, 1976–2025</h1>
+      <div class="rule r-t"></div>
+      <div class="catbox box-t">
+        <svg id="svgT" viewBox="0 0 1140 375" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="chips chips-t">
+        <div class="chip" data-in="6.3"><div class="cn"><b data-to="104.9" data-dec="1">0</b><i>°F</i></div><div class="ck">average annual peak</div></div>
+        <div class="chip" data-in="6.8"><div class="cn"><b data-to="110" data-dec="0">0</b><i>°F</i></div><div class="ck">record — 6/28/1994</div></div>
+        <div class="chip" data-in="7.3"><div class="cn"><b data-to="99" data-dec="0">0</b><i>°F</i></div><div class="ck">lowest peak — 1988</div></div>
+        <div class="chip" data-in="7.8"><div class="cn"><b data-to="27" data-dec="0">0</b><i> of 50</i></div><div class="ck">years reaching 105°F+</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-rain" class="scene">
+    <div class="content">
+      <div class="kicker k-r">Climate Data Analysis</div>
+      <h1 class="t t-r">Annual Rainfall, 1976–2025</h1>
+      <div class="rule r-r"></div>
+      <div class="catbox box-r">
+        <svg id="svgR" viewBox="0 0 1140 375" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="chips chips-r">
+        <div class="chip" data-in="5.3"><div class="cn"><b data-to="9.11" data-dec="2">0</b><i>″</i></div><div class="ck">50-year annual mean</div></div>
+        <div class="chip" data-in="5.7"><div class="cn"><b data-to="3.64" data-dec="2">0</b><i>″</i></div><div class="ck">driest — 2024</div></div>
+        <div class="chip" data-in="6.1"><div class="cn"><b data-to="14.83" data-dec="2">0</b><i>″</i></div><div class="ck">wettest — 1978</div></div>
+        <div class="chip" data-in="6.5"><div class="cn"><b data-to="1.43" data-dec="2">0</b><i>″ vs first half</i></div><div class="ck">2001–25 is drier</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-outro" class="scene">
+    <div class="ot-wrap">
+      <div class="ot-1">The averages are shifting.</div>
+      <div class="ot-2">The extreme is <span>not</span>.</div>
+      <div class="ot-sup">Typical days are hotter and water is scarcer — yet the single hottest day of the year hasn't moved since 1994.</div>
+      <div class="ot-pills">
+        <div class="ot-pill"><div class="n">2023 – 2024</div><div class="k">The two driest years in the 50-year record — consecutive</div></div>
+        <div class="ot-pill"><div class="n">31 years</div><div class="k">110°F record has stood since 6/28/1994</div></div>
+      </div>
+      <div class="ot-foot">MVTech · Research Brief · prepared 8/4/2026 — data NOAA RCC-ACIS, station USC00298535</div>
+    </div>
+  </div>
+
+  <div id="pb"><div id="pbFill"></div></div>
+  <div id="overlay"></div>
+</div>
+</div>
+
+<script>
+const DUR=48;
+const PEAK={years:[1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],vals:[102,103,107,105,106,107,102,102,100,105,101,103,99,107,107,104,105,103,110,106,105,104,106,105,104,104,104,104,102,104,103,104,104,104,107,106,105,107,106,103,106,109,105,104,107,107,107,109,107,107],fit:[-23.575462184873956,0.0642016806722689]};
+const RAIN={years:[1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],vals:[7.74,8.74,14.83,9.37,8.05,9.68,7.87,7.28,13.79,12.55,13,9.17,11.24,8.94,9.53,14.66,11.03,9.6,8.15,7.59,6.21,10.42,7.17,9.18,9.94,5.25,7.62,5.51,13.15,10.86,14.18,10.29,9.31,8.77,9.39,6.89,5.52,6.42,8.26,12.6,8.48,11.64,9.36,8.67,7,6.44,8.82,4.66,3.64,7.16],fit:[134.44888835534212,-0.06265258103241296]};
+const MEAN=RAIN.vals.reduce((a,b)=>a+b,0)/50;
+
+const clamp=(x,a=0,b=1)=>x<a?a:x>b?b:x;
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=x=>1-Math.pow(1-x,3);
+const EOB=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const fio=(t,a,b,c,d)=>t<a||t>d?0:t<b?(t-a)/(b-a):t>c?1-(t-c)/(d-c):1;
+
+function buildTemp(){
+  const L=80,R=1085,T=44,B=337,yr0=98,yr1=111.2;
+  const fx=y=>L+(y-1976)/49*(R-L);
+  const fy=v=>T+(yr1-v)/(yr1-yr0)*(B-T);
+  const pts=PEAK.vals.map((v,i)=>[fx(PEAK.years[i]),fy(v)]);
+  const line="M"+pts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join("L");
+  const area="M"+pts[0][0].toFixed(1)+","+B+" L"+pts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join("L")+" L"+pts[pts.length-1][0].toFixed(1)+","+B+" Z";
+  let g="";
+  for(let v=100;v<=110;v+=2){const y=fy(v);g+='<line class="g" x1="'+L+'" y1="'+y.toFixed(1)+'" x2="'+R+'" y2="'+y.toFixed(1)+'"/><text class="ax" x="'+(L-8)+'" y="'+(y+3.5).toFixed(1)+'" text-anchor="end">'+v+'°</text>';}
+  g+=[1976,1985,1995,2005,2015,2025].map(y=>'<text class="ax" x="'+fx(y).toFixed(1)+'" y="'+(B+16)+'" text-anchor="middle">'+y+'</text>').join("");
+  const dots=pts.map(p=>'<circle class="dot" cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="3.6"/>').join("");
+  const t1=fy(PEAK.fit[0]+PEAK.fit[1]*1976),t2=fy(PEAK.fit[0]+PEAK.fit[1]*2025);
+  const c1994=[fx(1994),fy(110)],c1988=[fx(1988),fy(99)];
+  const legend='<g class="LG"><line class="sw series-s" x1="80" y1="20" x2="104" y2="20"/><text class="leg" x="110" y="24">Hottest day of the year</text>'
+    +'<line class="sw trend-s" x1="380" y1="20" x2="404" y2="20"/><text class="leg" x="410" y="24">trend +0.64°F / decade (r² 0.17)</text></g>';
+  const inner='<defs><linearGradient id="gradT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3c2878" stop-opacity=".13"/><stop offset="1" stop-color="#3c2878" stop-opacity="0"/></linearGradient></defs>'
+    +'<g class="G">'+g+'</g>'+legend
+    +'<path class="area" d="'+area+'"/>'
+    +'<path class="line" d="'+line+'"/>'
+    +'<path class="trend" d="M'+L+','+t1.toFixed(1)+' L'+R+','+t2.toFixed(1)+'"/>'
+    +'<g class="cal c1988"><circle class="mk" cx="'+c1988[0].toFixed(1)+'" cy="'+c1988[1].toFixed(1)+'" r="3.4"/><text class="lbl" x="'+(c1988[0]+10).toFixed(1)+'" y="'+(c1988[1]+20).toFixed(1)+'"><tspan class="hl">99°F</tspan> (1988)</text></g>'
+    +'<g class="cal c1994"><circle class="mk" cx="'+c1994[0].toFixed(1)+'" cy="'+c1994[1].toFixed(1)+'" r="3.4"/><text class="lbl" text-anchor="end" x="'+(c1994[0]-10).toFixed(1)+'" y="'+(c1994[1]-8).toFixed(1)+'"><tspan class="hl">110°F</tspan> — record, 6/28/1994</text></g>'
+    +dots+'<circle class="head" r="6"/>';
+  document.getElementById('svgT').innerHTML=inner;
+  return {pts,line:document.querySelector('#svgT .line'),trend:document.querySelector('#svgT .trend'),area:document.querySelector('#svgT .area'),G:document.querySelector('#svgT .G'),LG:document.querySelector('#svgT .LG'),dots:[...document.querySelectorAll('#svgT .dot')],head:document.querySelector('#svgT .head'),c1988:document.querySelector('#svgT .c1988'),c1994:document.querySelector('#svgT .c1994')};
+}
+function buildRain(){
+  const L=80,R=1085,T=44,B=337;
+  const fy=v=>T+(17.5-v)/17.5*(B-T);
+  const pitch=(R-L)/50,bw=15.1;
+  let bars="";
+  for(let i=0;i<50;i++){const x=L+i*pitch+2.5;bars+='<rect class="bar" x="'+x.toFixed(1)+'" y="'+B+'" width="'+bw+'" height="0" rx="2.5"/>';}
+  let g="";
+  for(const v of [3,6,9,12,15]){const y=fy(v);g+='<line class="g" x1="'+L+'" y1="'+y.toFixed(1)+'" x2="'+R+'" y2="'+y.toFixed(1)+'"/><text class="ax" x="'+(L-8)+'" y="'+(y+3.5).toFixed(1)+'" text-anchor="end">'+v+'″</text>';}
+  g+=[1976,1985,1995,2005,2015,2025].map(y=>{const x=L+(y-1976)*pitch+pitch/2;return '<text class="ax" x="'+x.toFixed(1)+'" y="'+(B+16)+'" text-anchor="middle">'+y+'</text>';}).join("");
+  const legend='<g class="LG"><line class="sw trend-s" x1="80" y1="20" x2="104" y2="20"/><text class="leg" x="110" y="24">50-year mean '+MEAN.toFixed(2)+'″</text>'
+    +'<rect class="sw bar-s" x="330" y="16" width="16" height="8" rx="2"/><text class="leg" x="352" y="24">Annual total</text></g>';
+  const x24=L+48*pitch+pitch/2;
+  const x78=L+2*pitch+pitch/2;
+  const inner='<g class="G">'+g+'</g>'+legend+bars
+    +'<line class="mean" x1="'+L+'" y1="'+fy(MEAN).toFixed(1)+'" x2="'+R+'" y2="'+fy(MEAN).toFixed(1)+'"/>'
+    +'<g class="cal c24"><line class="lead" x1="'+x24.toFixed(1)+'" y1="46" x2="'+x24.toFixed(1)+'" y2="'+(fy(3.64)-14).toFixed(1)+'"/><text class="lbl" x="'+(R-2)+'" y="54" text-anchor="end"><tspan class="hl">3.64″</tspan> — driest, 2024</text></g>'
+    +'<g class="cal c78"><text class="lbl" x="'+(x78+12).toFixed(1)+'" y="'+(fy(14.83)-12).toFixed(1)+'"><tspan class="hl">14.83″</tspan> — wettest, 1978</text></g>';
+  document.getElementById('svgR').innerHTML=inner;
+  return {fy,base:B,pitch,bars:[...document.querySelectorAll('#svgR .bar')],mean:document.querySelector('#svgR .mean'),G:document.querySelector('#svgR .G'),LG:document.querySelector('#svgR .LG'),c24:document.querySelector('#svgR .c24'),c78:document.querySelector('#svgR .c78')};
+}
+
+const TEMP=buildTemp(),RA=buildRain();
+const STAGE=document.getElementById('stage'),HDR=document.getElementById('hdr');
+const scenes={t1:document.getElementById('sc-title'),t2:document.getElementById('sc-temp'),t3:document.getElementById('sc-rain'),t4:document.getElementById('sc-outro')};
+const overlay=document.getElementById('overlay'),pb=document.getElementById('pb'),pbFill=document.getElementById('pbFill');
+const el=(sel)=>document.querySelector(sel);
+const KT=el('.k-t'),TT=el('.t-t'),RT=el('.r-t'),BT=el('.box-t'),CT=el('.chips-t');
+const KR=el('.k-r'),TR=el('.t-r'),RR=el('.r-r'),BR=el('.box-r'),CR=el('.chips-r');
+const TL={tag:el('.tl-tag'),wm:el('.tl-wm'),wmsub:el('.tl-wmsub'),h1:el('.tl-h1'),sub:el('.tl-sub'),meta:el('.tl-meta')};
+const OT={a:el('.ot-1'),b:el('.ot-2'),sup:el('.ot-sup'),pill:[...document.querySelectorAll('.ot-pill')],foot:el('.ot-foot')};
+const chipTEls=[...document.querySelectorAll('.chips-t .chip')];
+const chipREls=[...document.querySelectorAll('.chips-r .chip')];
+TEMP.line.style.strokeDasharray=TEMP.line.getTotalLength();
+TEMP.line.style.strokeDashoffset=TEMP.line.getTotalLength();
+TEMP.trend.style.strokeDasharray=TEMP.trend.getTotalLength();
+TEMP.trend.style.strokeDashoffset=TEMP.trend.getTotalLength();
+RA.mean.style.strokeDasharray=RA.mean.getTotalLength();
+RA.mean.style.strokeDashoffset=RA.mean.getTotalLength();
+
+function setO(el,v){el.style.opacity=v;}
+function move(el,dx,dy){el.style.transform='translate('+dx+'px,'+dy+'px)';}
+
+function render(t){
+  const S1=[0.0,0.9,10.3,11.2],S2=[11.2,12.1,24.1,25.0],S3=[25.0,25.9,38.1,39.0],S4=[39.0,39.9,47.2,48.0];
+  setO(scenes.t1,fio(t,...S1));setO(scenes.t2,fio(t,...S2));setO(scenes.t3,fio(t,...S3));setO(scenes.t4,fio(t,...S4));
+  HDR.classList.toggle('onDark',t<S1[3]-0.1||t>S4[0]-0.1);
+  overlay.style.opacity=fio(t,47.3,47.95,0,0.35);
+  pb.style.opacity=Math.min(fio(t,0.3,1.0,46.9,47.9),0.6);
+  pbFill.style.transform='scaleX('+clamp(t/DUR)+')';
+  if(t<S1[3]||t>=S1[3]-0.4){}else{}
+  /* title */
+  const l1=t;
+  TL.tag.style.opacity=ease(seg(l1,0.05,0.9));move(TL.tag,0,16-16*ease(seg(l1,0.05,0.9)));
+  TL.wm.style.opacity=ease(seg(l1,0.4,1.2));move(TL.wm,0,14-14*ease(seg(l1,0.4,1.2)));
+  TL.wmsub.style.opacity=ease(seg(l1,0.55,1.35));
+  TL.h1.style.opacity=ease(seg(l1,0.7,1.7));move(TL.h1,0,22-22*ease(seg(l1,0.7,1.7)));
+  TL.sub.style.opacity=ease(seg(l1,1.2,2.1));
+  TL.meta.style.opacity=ease(seg(l1,1.7,2.6));
+  /* temperature */
+  const l2=t-S2[0];
+  KT.style.opacity=ease(seg(l2,0.05,0.7));move(KT,0,14-14*ease(seg(l2,0.05,0.7)));
+  TT.style.opacity=ease(seg(l2,0.2,1.0));move(TT,0,16-16*ease(seg(l2,0.2,1.0)));
+  RT.style.transform='scaleX('+ease(seg(l2,0.35,1.2))+')';
+  BT.style.opacity=ease(seg(l2,0.15,1.0));move(BT,0,22-22*ease(seg(l2,0.15,1.0)));
+  setO(TEMP.G,ease(seg(l2,0.6,1.3)));setO(TEMP.LG,ease(seg(l2,0.9,1.6)));
+  const p=seg(l2,1.3,5.7);
+  TEMP.line.style.strokeDashoffset=TEMP.line.getTotalLength()*(1-p);
+  TEMP.area.style.opacity=p*0.9;
+  const headN=clamp(p)*49;
+  for(let i=0;i<50;i++){
+    const s=EOB(clamp((l2-(1.3+i/49*4.4)-0.15)/0.3));
+    const d=TEMP.dots[i];d.style.opacity=clamp(s*1.6);d.style.transform='scale('+(0.3+0.7*s)+')';
+  }
+  const hi=Math.floor(headN);
+  if(hi>=0&&hi<50){const pt=TEMP.pts[hi];TEMP.head.setAttribute('cx',pt[0]);TEMP.head.setAttribute('cy',pt[1]);}
+  TEMP.head.style.opacity=clamp(Math.min(p,1-p)*6);
+  TEMP.head.style.transform='scale('+(1+0.18*Math.sin(l2*7))+')';
+  TEMP.trend.style.strokeDashoffset=TEMP.trend.getTotalLength()*(1-seg(l2,5.8,7.3));
+  setO(TEMP.c1988,ease(seg(l2,2.5,3.1)));setO(TEMP.c1994,ease(seg(l2,2.9,3.5)));
+  chipsT(l2);
+  /* rainfall */
+  const l3=t-S3[0];
+  KR.style.opacity=ease(seg(l3,0.05,0.7));move(KR,0,14-14*ease(seg(l3,0.05,0.7)));
+  TR.style.opacity=ease(seg(l3,0.2,1.0));move(TR,0,16-16*ease(seg(l3,0.2,1.0)));
+  RR.style.transform='scaleX('+ease(seg(l3,0.35,1.2))+')';
+  BR.style.opacity=ease(seg(l3,0.15,1.0));move(BR,0,22-22*ease(seg(l3,0.15,1.0)));
+  setO(RA.G,ease(seg(l3,0.6,1.3)));setO(RA.LG,ease(seg(l3,0.9,1.6)));
+  const hl=seg(l3,3.3,3.8);
+  for(let i=0;i<50;i++){
+    const v=RAIN.vals[i],h=(RA.base-RA.fy(v))*ease(clamp((l3-1.2-i*0.028)/0.45));
+    const b=RA.bars[i];b.setAttribute('y',RA.base-h);b.setAttribute('height',h);
+    b.style.opacity=clamp(ease(clamp((l3-1.2-i*0.028)/0.45))*2);
+    if(i>=47&&i<=48&&hl>0){b.style.fill='#b48c3c';b.style.opacity=clamp(ease(clamp((l3-1.2-i*0.028)/0.45))*2*(0.2+0.8*hl));}
+  }
+  RA.mean.style.strokeDashoffset=RA.mean.getTotalLength()*(1-seg(l3,3.6,4.5));
+  setO(RA.c78,ease(seg(l3,2.0,2.6)));setO(RA.c24,ease(seg(l3,3.4,4.0)));
+  chipsR(l3);
+  /* outro */
+  const l4=t-S4[0];
+  OT.a.style.opacity=ease(seg(l4,0.25,1.15));move(OT.a,0,20-20*ease(seg(l4,0.25,1.15)));
+  OT.b.style.opacity=ease(seg(l4,1.35,2.25));move(OT.b,0,20-20*ease(seg(l4,1.35,2.25)));
+  OT.sup.style.opacity=ease(seg(l4,2.7,3.5));
+  OT.pill.forEach((p2,i)=>setO(p2,ease(seg(l4,3.9+i*0.5,4.6+i*0.5))));
+  OT.foot.style.opacity=ease(seg(l4,5.8,6.6));
+}
+function chipsT(l){
+  chipTEls.forEach((c,i)=>{const tin=+c.dataset.in;c.style.opacity=ease(seg(l,tin,tin+0.5));move(c,0,14-14*ease(seg(l,tin,tin+0.5)));count(c,i,l,tin+0.1,tin+1.5);});
+}
+function chipsR(l){
+  chipREls.forEach((c,i)=>{const tin=+c.dataset.in;c.style.opacity=ease(seg(l,tin,tin+0.5));move(c,0,14-14*ease(seg(l,tin,tin+0.5)));count(c,i,l,tin+0.1,tin+1.5);});
+}
+function count(c,i,l,t0,t1){
+  const b=c.querySelector('b'),to=+b.dataset.to,dec=+b.dataset.dec;
+  const v=to*ease(seg(l,t0,t1));
+  b.textContent=dec? (to>=0?v.toFixed(dec):Math.abs(v).toFixed(dec)) : Math.round(v);
+  c.dataset.signed=(to<0)?'1':'';
+  if(to<0)b.style.paddingLeft='0'; 
+  b.textContent=(to<0&&dec&&to>=0?'':(to<0?'−':''))+(dec?v.toFixed(dec):Math.round(v));
+}
+function scale(){const w=ANIM.clientWidth,h=ANIM.clientHeight;const s=Math.min(w/1280,h/640);const dx=(w-1280*s)/2,dy=(h-640*s)/2;STAGE.style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px) scale('+s+')';}
+const ANIM=document.getElementById('lc-anim');
+new ResizeObserver(scale).observe(ANIM);scale();
+STAGE.style.opacity=1;
+let t0=performance.now();
+function frame(){const t=((performance.now()-t0)/1000)%DUR;render(t);requestAnimationFrame(frame);}
+requestAnimationFrame(frame);
+window.__anim={seek:function(s){t0=performance.now()-s*1000;render(s);},renderTo:function(s){render(s);}};
+</script>

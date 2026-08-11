@@ -252,7 +252,7 @@
         "@id": "https://mvtechusa.com/#organization"
       },
       "telephone": "+12134440024",
-      "url": "https://mvtechusa.com/#contact",
+      "url": "https://mvtechusa.com/",
       "knowsAbout": [
         "small business operations",
         "document design",
@@ -401,7 +401,7 @@
   --r-lg:20px;
   --r-pill:9999px;
 
-  --space:clamp(6rem,10vw,9rem);
+  --space:clamp(3.5rem,6vw,5.5rem);
   --wrap:1536px;
 
   --ease:cubic-bezier(.25,.1,.25,1);
@@ -539,6 +539,18 @@ section{position:relative}
 @media(max-width:820px){.dcard{flex-basis:calc((100% - var(--gap))/2)}}
 @media(max-width:520px){.dcard{flex-basis:100%}.deck-arrow{display:none}}
 
+/* ---------- Animated brief (2:1 embed) — same shell + rhythm as .pcard ---------- */
+/* sits directly under the hero, which already contributes 72px of bottom padding */
+#showcase{padding-top:clamp(2rem,3.5vw,3rem)}
+.filmpanel{margin-top:2.1rem;background:var(--card);border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);overflow:hidden;position:relative}
+.filmframe{position:relative;width:100%;aspect-ratio:2/1;background:#0b0813;border-bottom:1px solid var(--line-soft)}
+.filmframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.filmnote{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;align-items:baseline;justify-content:space-between;
+  padding:1.1rem 1.5rem;font-size:.92rem;color:var(--muted-2)}
+.filmnote a{color:var(--gold);text-decoration:none}
+.filmnote a:hover{text-decoration:underline}
+
 /* ---------- Role selector ---------- */
 .roletabs{display:flex;gap:.35rem;justify-content:center;flex-wrap:wrap;
   margin:2.2rem auto 0;background:var(--card);border:1px solid var(--line-soft);
@@ -588,14 +600,19 @@ section{position:relative}
 @media(max-width:760px){.sysgroups{grid-template-columns:1fr;gap:1.5rem}.syslist.two{grid-template-columns:1fr}}
 
 /* ---------- Steps ---------- */
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:3rem}
-.step{background:var(--card-2);border:1px solid var(--line-soft);border-radius:var(--r-lg);
-  padding:1.7rem;transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:3.5rem}
+.step{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-lg);
+  padding:1.9rem 1.7rem;display:flex;flex-direction:column;
+  transition:border-color .2s var(--ease),transform .2s var(--ease)}
 .step:hover{border-color:#3d3357;transform:translateY(-3px)}
-.step .num{width:44px;height:44px;border-radius:var(--r-md);display:grid;place-items:center;
-  margin-bottom:1.1rem;font-size:1.05rem;font-weight:600;background:rgba(232,181,75,.18);color:var(--gold-2)}
-.step h3{font-size:1.15rem;margin-bottom:.55rem}
-.step p{color:var(--muted);font-size:.98rem;line-height:1.5}
+.step.feature{border-color:#4a3f7a;box-shadow:0 0 0 1px rgba(139,92,246,.2)}
+.step .stepno{font-size:2.4rem;font-weight:600;letter-spacing:-.03em;line-height:1;
+  margin-top:1.1rem;color:var(--ink)}
+.step h3{font-size:1.15rem;margin-top:.5rem;margin-bottom:0}
+.step p{color:var(--muted);font-size:.95rem;line-height:1.55;
+  margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid var(--line-soft)}
+.step .stepfoot{margin-top:auto;padding-top:1.4rem;color:var(--muted-2);
+  font-size:.82rem;letter-spacing:.02em}
 @media(max-width:900px){.steps{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
 
 /* ---------- FAQ ---------- */
@@ -700,14 +717,11 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
   <div class="wrap nav-in">
     <a class="brand" href="#top"><span class="orb"></span><b>MVTech</b></a>
     <nav class="nav-links">
-      <a href="#roles">Who it's for</a>
       <a href="#how">How it works</a>
-      <a href="#features">What you get</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost" href="#pricing">See a sample month</a>
       <a class="btn btn-primary" href="tel:12134440024">Call 213-444-0024</a>
     </div>
     <button class="nav-toggle" aria-label="Menu">≡</button>
@@ -729,21 +743,20 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
     </ul>
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="tel:12134440024">Call 213-444-0024</a>
-      <a class="btn btn-ghost btn-lg" href="#pricing">See a sample month</a>
     </div>
     <div class="panel deck-panel reveal">
       <div class="deck">
         <span class="deck-cap">Real finished documents</span>
         <div class="deck-viewport">
           <div class="deck-track" id="deckTrack">
-            <figure class="dcard"><a class="shotlink" href="samples/fernandez-onepager.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/fernandez-onepager.png" alt="Fernandez Fencing one-pager" loading="lazy"></span></a><figcaption>Business one-pager</figcaption></figure>
-            <figure class="dcard"><a class="shotlink" href="samples/hoagland-listing.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/hoagland-listing.png" alt="For Sale By Owner listing sheet" loading="lazy"></span></a><figcaption>For Sale By Owner support</figcaption></figure>
-            <figure class="dcard"><a class="shotlink" href="samples/research-report.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/research-report.png" alt="Deep research report" loading="lazy"></span></a><figcaption>Deep research report</figcaption></figure>
             <figure class="dcard"><a class="shotlink" href="samples/climate-brief.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/climate-brief.png" alt="Charted research brief with 50-year data tables and graphs" loading="lazy"></span></a><figcaption>Charted research brief</figcaption><a class="altlink" href="samples/climate-brief.html" target="_blank" rel="noopener" aria-label="Open the interactive version of the charted research brief (new tab)">Interactive version &rsaquo;</a></figure>
+            <figure class="dcard"><a class="shotlink" href="samples/research-report.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/research-report.png" alt="Deep research report" loading="lazy"></span></a><figcaption>Deep research report</figcaption></figure>
             <figure class="dcard"><a class="shotlink" href="samples/fernandez-quote.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/fernandez-quote.png" alt="Fernandez Fencing quote form" loading="lazy"></span></a><figcaption>Fillable quote form</figcaption></figure>
             <figure class="dcard"><a class="shotlink" href="samples/service-menu.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/service-menu.png" alt="Service menu" loading="lazy"></span></a><figcaption>Service menu</figcaption></figure>
             <figure class="dcard"><a class="shotlink" href="samples/legal-onepager.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/legal-onepager.png" alt="Legal practice one-pager" loading="lazy"></span></a><figcaption>Legal one-pager</figcaption></figure>
             <figure class="dcard"><a class="shotlink" href="img/mvtech-flyer-213-8.5x11.png" target="_blank" rel="noopener" aria-label="Open sample document (image, new tab)"><span class="shot"><img src="img/mvtech-flyer-213-8.5x11.png" alt="MVTech marketing graphic" loading="lazy"></span></a><figcaption>Marketing Graphic</figcaption></figure>
+            <figure class="dcard"><a class="shotlink" href="samples/fernandez-onepager.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/fernandez-onepager.png" alt="Fernandez Fencing one-pager" loading="lazy"></span></a><figcaption>Business one-pager</figcaption></figure>
+            <figure class="dcard"><a class="shotlink" href="samples/hoagland-listing.pdf" target="_blank" rel="noopener" aria-label="Open sample document (PDF, new tab)"><span class="shot"><img src="samples/hoagland-listing.png" alt="For Sale By Owner listing sheet" loading="lazy"></span></a><figcaption>For Sale By Owner support</figcaption></figure>
           </div>
         </div>
         <button class="deck-arrow prev" aria-label="Previous deliverables">‹</button>
@@ -754,23 +767,21 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
   </div>
 </section>
 
-<!-- ROLE SELECTOR -->
-<section class="pad" id="roles">
+<!-- ANIMATED BRIEF -->
+<section class="pad" id="showcase">
   <div class="wrap">
     <div class="center reveal">
-      <h2>Built around your trade</h2>
-      <p class="lead">Whatever you do, the paperwork looks different. We shape everything to how your business actually runs.</p>
-      <div class="roletabs" role="tablist" aria-label="Choose your trade">
-        <button class="roletab" role="tab" aria-selected="true" data-role="0">Trades</button>
-        <button class="roletab" role="tab" aria-selected="false" data-role="1">Food &amp; Hospitality</button>
-        <button class="roletab" role="tab" aria-selected="false" data-role="2">Professional Services</button>
-        <button class="roletab" role="tab" aria-selected="false" data-role="3">Auto &amp; Retail</button>
-      </div>
-      <p class="rolehint">Pick your trade to see how we'd set it up</p>
+      <h2>A document that <span class="grad">explains itself.</span></h2>
+      <p class="lead">The same research brief from the deck above, built to present its own findings. Fifty years of local climate data, charted on screen, finding by finding.</p>
     </div>
-    <div class="rolepanel reveal" id="rolepanel">
-      <h3 id="role-h">Every job's real cost, clear</h3>
-      <p id="role-p">We document and track every facet of your business — receipts from the truck, supplier invoices, materials by the job — itemized so you can see what each job actually cost you. Contractor licensing, bonding, certifications and permits are filed with their dates tracked, so a reminder lands on your dashboard before one comes due and you're prepared at tax time.</p>
+    <div class="filmpanel reveal">
+      <div class="filmframe">
+        <iframe src="samples/climate-brief-animated.html" title="Animated research brief: Las Cruces peak temperature and rainfall, 1976-2025" loading="lazy" scrolling="no"></iframe>
+      </div>
+      <div class="filmnote">
+        <span>Source data: NOAA Regional Climate Centers (RCC-ACIS), station USC00298535.</span>
+        <span><a href="samples/climate-brief.pdf" target="_blank" rel="noopener">Read the printed brief &rsaquo;</a></span>
+      </div>
     </div>
   </div>
 </section>
@@ -784,56 +795,26 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
     </div>
     <div class="steps">
       <article class="step reveal">
-        <div class="num">1</div>
+        <span class="tier t1">STEP ONE</span>
+        <div class="stepno">01</div>
         <h3>One call to set it up</h3>
         <p>One call walks through how your business actually runs, at whatever pace suits you. We build your folder, your dashboard and your documents around that — before you pay a monthly dollar.</p>
+        <div class="stepfoot">Takes about an hour</div>
       </article>
-      <article class="step reveal">
-        <div class="num">2</div>
+      <article class="step feature reveal">
+        <span class="tier t2">STEP TWO</span>
+        <div class="stepno">02</div>
         <h3>Keep working the way you work</h3>
         <p>Bills and receipts already in your inbox become line items on their own. Snap a photo of anything on paper and it's read and filed for you. Nothing else about your day changes.</p>
+        <div class="stepfoot">Nothing to install, nothing to learn</div>
       </article>
       <article class="step reveal">
-        <div class="num">3</div>
+        <span class="tier t3">STEP THREE</span>
+        <div class="stepno">03</div>
         <h3>Your month comes back organized</h3>
         <p>On the first you get a plain-English report of every dollar in and out, every document filed where you can find it, and renewal dates flagged on your dashboard before they lapse.</p>
+        <div class="stepfoot">Delivered the first of every month</div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES BENTO -->
-<section class="pad" id="features">
-  <div class="wrap">
-    <div class="center reveal">
-      <h2>Everything handled, nothing to learn</h2>
-      <p class="lead">No new software to log into — your spreadsheets open right in Excel or Google Sheets. You keep working the way you already work, and the organized picture comes back to you.</p>
-    </div>
-    <div class="bento">
-      <article class="fcard reveal"><div class="ficon c1">▤</div><h3>Itemized to the line</h3><p>Every receipt captured down to the line item — the detail bank feeds and store apps quietly throw away.</p></article>
-      <article class="fcard reveal"><div class="ficon c2">⇅</div><h3>Money in, money out</h3><p>See what came in and what went out, side by side, in one place — every payer recognized as it lands.</p></article>
-      <article class="fcard reveal"><div class="ficon c3">▦</div><h3>Your monthly report</h3><p>A clear, plain-English picture of your month — no jargon, no logins — available on the first.</p></article>
-      <article class="fcard reveal"><div class="ficon c4">▢</div><h3>Records you own</h3><p>Every document organized in a folder that's yours. Perfect for when you need to prove income or tax prep.</p></article>
-      <article class="fcard reveal"><div class="ficon c5">✎</div><h3>Nothing to forward</h3><p>Bills and receipts already in your inbox become line items on their own. Snap a photo of anything on paper and it's read and filed for you.</p></article>
-      <article class="fcard reveal"><div class="ficon c6">☏</div><h3>Support from a real person</h3><p>One point of contact who knows your business by name. Text your MVTech rep when something comes up.</p></article>
-      <article class="fcard wide reveal">
-        <div class="whead"><div class="ficon c2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div><h3>Full document support</h3></div>
-        <p>Quotes, invoices, intake forms, letters, reports — the custom documents your business sends out, built to order and looked over before they ever leave your hands.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER -->
-<section class="pad founder" id="contact">
-  <div class="glow cool"></div>
-  <div class="wrap">
-    <div class="center reveal">
-      <span class="eyebrow">Founder-led</span>
-      <h2 style="margin-top:1.4rem">Call me when you're ready for <span class="grad">an associate.</span></h2>
-      <p class="who">Michael Vetter · Business Workflow Designer</p>
-      <p class="prose">Hi — I'm Michael. I take the paperwork off your plate and streamline every facet of your business, and I personally oversee every document that goes out the door. Before you commit to anything, get me on a call: I'll show you exactly what I'd set up for your business, answer every question, and if it isn't a fit, I'll tell you straight.</p>
-      <a class="btn btn-primary btn-lg" href="tel:12134440024">Text or Call 213-444-0024</a>
     </div>
   </div>
 </section>
@@ -856,7 +837,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Snap a photo of any document — insurance, permits, registrations — filed where you'll find it</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Every dollar in and out, itemized line by line — current the moment you look</li>
         </ul>
-        <a class="btn btn-ghost" href="#contact">Get started</a>
+        <a class="btn btn-ghost" href="tel:12134440024">Get started</a>
       </article>
       <article class="pcard feature reveal">
         <span class="tier t2">PROMOTED <span class="pop">· Most popular</span></span>
@@ -868,7 +849,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Graphics, flyers and custom documents on request</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in your own brand — polished and print-ready</li>
         </ul>
-        <a class="btn btn-primary" href="#contact">Choose Promoted</a>
+        <a class="btn btn-primary" href="tel:12134440024">Choose Promoted</a>
       </article>
       <article class="pcard reveal">
         <span class="tier t3">TEAM MEMBER</span>
@@ -880,7 +861,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your tech person for the everyday stuff — apps, devices, accounts</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A deep-dive research report and review each quarter</li>
         </ul>
-        <a class="btn btn-gold" href="#contact">Choose Team Member</a>
+        <a class="btn btn-gold" href="tel:12134440024">Choose Team Member</a>
       </article>
     </div>
     <p class="alacarte reveal">Not ready for a monthly plan? Single projects — a form, a flyer, a research report — are available one at a time. Ask when we talk.</p>
@@ -942,8 +923,8 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
         <p>Custom business systems and monthly reporting for owner-operators. Serving clients nationwide.</p>
         <div class="phones"><a href="tel:12134440024">213-444-0024</a></div>
       </div>
-      <div class="foot-col"><h4>Service</h4><a href="#features">What you get</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#roles">Who it's for</a></div>
-      <div class="foot-col"><h4>Company</h4><a href="#contact">About Michael</a><a href="tel:12134440024">Call 213-444-0024</a><a href="mailto:tech@mvtechusa.com">Contact</a></div>
+      <div class="foot-col"><h4>Service</h4><a href="#showcase">Sample work</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="tel:12134440024">Call 213-444-0024</a><a href="mailto:tech@mvtechusa.com">Contact</a></div>
       <div class="foot-col"><h4>More</h4><a href="#faq">Questions and answers</a><a href="privacy.html">Privacy</a><a href="llms.txt">Summary for AI assistants</a></div>
     </div>
     <div class="foot-bottom">
@@ -953,21 +934,6 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
 </footer>
 
 <script>
-// trade tabs
-const roles=[
-  {h:"Every job's real cost, clear",p:"We document and track every facet of your business — receipts from the truck, supplier invoices, materials by the job — itemized so you can see what each job actually cost you. Contractor licensing, bonding, certifications and permits are filed with their dates tracked, so a reminder lands on your dashboard before one comes due and you're prepared at tax time."},
-  {h:'The daily rush, sorted',p:"Supplier runs, cash and card, catering and events — all of it documented and tracked. Shopping trips come back itemized on their own tab, and each event can get its own breakdown on request. Health permits, food handler certifications and business licenses are filed with a reminder on your dashboard before each one comes due. Your online banking can't do that."},
-  {h:'Documented and ready',p:"Client expenses, subscriptions, filing fees and retainers — documented and tracked down to the line item. Professional licensing, certifications, dues and state registrations are filed with their dates tracked, so a dashboard reminder comes up well before one lapses and you're prepared at tax time instead of reconstructing a year from memory."},
-  {h:'Tied back to what sold',p:"Parts, inventory and vendor bills — documented and tracked down to the line item, matched against what actually moved. Dealer licensing, resale certificates, technician certifications and vehicle registrations are filed with a reminder on your dashboard ahead of each expiration date, so you're prepared at tax time with every number already in place."}
-];
-const tabs=document.querySelectorAll('.roletab');
-const rh=document.getElementById('role-h'),rp=document.getElementById('role-p');
-tabs.forEach(t=>t.addEventListener('click',()=>{
-  tabs.forEach(x=>x.setAttribute('aria-selected','false'));
-  t.setAttribute('aria-selected','true');
-  const r=roles[+t.dataset.role];rh.textContent=r.h;rp.textContent=r.p;
-}));
-
 // mobile nav
 document.querySelector('.nav-toggle').addEventListener('click',()=>{
   const l=document.querySelector('.nav-links');
