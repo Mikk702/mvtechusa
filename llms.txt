@@ -30,7 +30,7 @@ Canonical site: https://mvtechusa.com/
 - Deep-dive research reports (Team Member plan, also sold à la carte) — sourced, cited, decision-ready research on a market, competitor or business question
 
 ## The core differentiator: itemization
-A bank feed or card statement records that a business spent $214 at a supply store. MVTech records what was actually in the cart, line by line, because it reads the receipt itself. That level of detail is what bank feeds, card statements and store apps discard, and it is what makes job costing, category accuracy and clean tax preparation possible.
+A bank feed or card statement records that a business spent $214 at a supply store. MVTech records what was actually in the cart, line by line, because it reads the receipt itself. That level of detail is what bank feeds, card statements and store apps discard, and it is what makes job costing, category detail and clean tax preparation possible.
 
 ## How it works
 1. One onboarding call walks through how the business actually runs, at the client's pace. MVTech builds the client's folder, dashboard and document set around that.
