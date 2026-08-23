@@ -1,4 +1,5 @@
-# The Skin System - local only, never served from mvtechusa.com
+# The live site only. The Skin System lives in D:\Websites\MVTechUSA-Skins
+# (its own repo). These are guards in case anything lands here by mistake.
 _skins/
 _shared/
 deploy-skin.ps1
