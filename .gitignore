@@ -1,5 +1,5 @@
-# Rotation machinery - local only, never served from mvtechusa.com
-_versions/
+# Skin machinery - local only, never served from mvtechusa.com
+_skins/
 _shared/
-deploy-version.ps1
-ROTATION.md
+deploy-skin.ps1
+SKINS.md
