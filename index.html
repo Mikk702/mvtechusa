@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MVTECH-HEAD-BLOCK: canonical search/AI head. Source: _shared/head-block.html.
+     Do not edit inside a skin - edit _shared and re-run: .\deploy-skin.ps1 -Head -->
 <title>Business Paperwork &amp; Receipt Tracking for Owner-Operators | MVTech</title>
 <meta name="description" content="Business paperwork filed, every dollar tracked line by line, and a plain-English report every month — for owner-operators nationwide. Nothing to install, nothing to learn.">
 <meta name="keywords" content="business paperwork help, receipt tracking service, itemized expense tracking, small business bookkeeping, income tracking, monthly financial reports, document organization, license and permit renewal tracking, invoice and quote creation, fillable forms, owner-operator operations, fractional operations, remote, nationwide">
@@ -18,8 +20,6 @@
 <meta name="twitter:title" content="MVTech — Business Paperwork &amp; Receipt Tracking for Owner-Operators">
 <meta name="twitter:description" content="The entire paper side of your business, organized, tracked, and professionally presented. Nationwide.">
 <meta name="twitter:image" content="https://mvtechusa.com/og-preview.png">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="theme-color" content="#070b14">
 <meta name="author" content="Michael Vetter">
 <link rel="alternate" type="text/plain" href="https://mvtechusa.com/llms.txt" title="Plain-text summary of MVTech for language models">
 <script type="application/ld+json">
@@ -78,7 +78,6 @@
       "legalName": "MVTech, a service of MVEnterprises",
       "url": "https://mvtechusa.com/",
       "telephone": "+12134440024",
-      "email": "tech@mvtechusa.com",
       "image": "https://mvtechusa.com/og-preview.png",
       "logo": {
         "@type": "ImageObject",
@@ -138,22 +137,16 @@
       ],
       "makesOffer": [
         {
-          "@id": "https://mvtechusa.com/#plan-organized"
-        },
-        {
-          "@id": "https://mvtechusa.com/#plan-promoted"
-        },
-        {
-          "@id": "https://mvtechusa.com/#plan-team-member"
+          "@id": "https://mvtechusa.com/#plan-monthly"
         }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "MVTech monthly plans",
+        "name": "MVTech monthly plan",
         "itemListElement": [
           {
             "@type": "Offer",
-            "@id": "https://mvtechusa.com/#plan-organized",
+            "@id": "https://mvtechusa.com/#plan-monthly",
             "price": "195",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
@@ -168,7 +161,7 @@
             },
             "itemOffered": {
               "@type": "Service",
-              "name": "Organized",
+              "name": "MVTech Monthly Plan",
               "serviceType": "Document organization and income/expense tracking",
               "provider": {
                 "@id": "https://mvtechusa.com/#organization"
@@ -177,70 +170,12 @@
                 "@type": "Country",
                 "name": "United States"
               },
-              "description": "Your own dashboard showing the whole business at a glance, searchable and updated daily. Receipts and bills are logged straight from the email you already receive, with every dollar in and out itemized line by line and current the moment you look. Photograph any document — insurance, permits, registrations — and it is filed where you can find it."
-            }
-          },
-          {
-            "@type": "Offer",
-            "@id": "https://mvtechusa.com/#plan-promoted",
-            "price": "395",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://mvtechusa.com/#pricing",
-            "eligibleCustomerType": "https://schema.org/Business",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "395",
-              "priceCurrency": "USD",
-              "unitCode": "MON",
-              "billingIncrement": 1
-            },
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Promoted",
-              "serviceType": "Document organization plus advertising and branded document production",
-              "provider": {
-                "@id": "https://mvtechusa.com/#organization"
-              },
-              "areaServed": {
-                "@type": "Country",
-                "name": "United States"
-              },
-              "description": "Everything in Organized plus your ads written, posted and kept running, graphics, flyers and custom documents produced on request, all in your own brand and print-ready."
-            }
-          },
-          {
-            "@type": "Offer",
-            "@id": "https://mvtechusa.com/#plan-team-member",
-            "price": "695",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://mvtechusa.com/#pricing",
-            "eligibleCustomerType": "https://schema.org/Business",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "695",
-              "priceCurrency": "USD",
-              "unitCode": "MON",
-              "billingIncrement": 1
-            },
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Team Member",
-              "serviceType": "Full operations support for owner-operated businesses",
-              "provider": {
-                "@id": "https://mvtechusa.com/#organization"
-              },
-              "areaServed": {
-                "@type": "Country",
-                "name": "United States"
-              },
-              "description": "Everything in Promoted plus your MVTech rep on call with a direct line anytime, your tech person for everyday apps, devices and accounts, and a deep-dive research report and review each quarter."
+              "description": "One flat monthly price, month to month, with no contract and no term. Your own dashboard on desktop and phone showing the whole business at a glance, searchable and updated daily. Receipts and bills are logged straight from the email you already receive, with every dollar in and out itemized line by line and current the moment you look. Photograph any document — insurance, permits, registrations — and it is filed where you can find it. A plain-English report on the first of every month, and personal support from MVTech. Ads, flyers, forms, listing sheets and research reports are available as single projects, priced one at a time."
             }
           }
         ]
       },
-      "priceRange": "$195–$695 per month, plus a one-time $495 onboarding"
+      "priceRange": "$195 per month, plus a one-time $495 onboarding"
     },
     {
       "@type": "Person",
@@ -316,7 +251,7 @@
           "name": "How much does MVTech cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A one-time $495 onboarding builds your system up front, then a flat monthly price. $495 setup — one time, before your first monthly dollar. $195 a month — Organized. $395 a month — Promoted. $695 a month — Team Member. No hourly billing and no per-document charges. The monthly price is the price."
+            "text": "One plan at one flat price. A one-time $495 onboarding builds your system up front, then $195 a month. $495 setup — one time, before your first monthly dollar. $195 a month — the plan, month to month. No hourly billing and no per-document charges. The monthly price is the price, there is no contract and no term, and you can stop whenever you like. Single projects — ads, flyers, forms, listing sheets, research reports — are priced one at a time on top of the plan."
           }
         },
         {
@@ -364,6 +299,9 @@
   ]
 }
 </script>
+<!-- /MVTECH-HEAD-BLOCK -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#070b14">
 <style>
 /* Hallmark · macrostructure: Marquee Hero (product-led long-scroll) · tone: atmospheric-premium · anchor hue: gold→violet gradient
  * theme: studied-DNA (source: greysound.ai layout) reskinned → MVTech brand (purple + gold; website exempt from black-primary per 7/12)
@@ -640,8 +578,13 @@ section{position:relative}
 
 /* ---------- Pricing ---------- */
 .prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:3.5rem}
+.prices.solo{grid-template-columns:min(460px,100%);justify-content:center}
+.alacarte + .alacarte{margin-top:.9rem}
 .pcard{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-lg);
-  padding:1.8rem;display:flex;flex-direction:column}
+  display:grid;grid-template-columns:1fr;overflow:hidden}
+.pcell{padding:1.8rem;display:flex;flex-direction:column;min-width:0}
+.pcell-list{padding-top:0}
+.pcell-list .plist{margin-bottom:0}
 .pcard.feature{border-color:#4a3f7a;box-shadow:0 0 0 1px rgba(139,92,246,.2)}
 .tier{align-self:flex-start;font-size:.75rem;font-weight:600;letter-spacing:.04em;
   padding:.32rem .8rem;border-radius:var(--r-pill);margin-bottom:1.3rem;display:inline-flex;gap:.5rem;align-items:center}
@@ -657,8 +600,20 @@ section{position:relative}
   display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.8rem}
 .plist li{display:flex;gap:.6rem;font-size:.92rem;color:var(--ink-2)}
 .plist svg{flex:none;margin-top:3px;color:var(--gold)}
-.pcard .btn{margin-top:auto}
+.pcell-main .btn{margin-top:auto;align-self:flex-start}
 .alacarte{margin:2.2rem auto 0;max-width:62ch;text-align:center;color:var(--muted);font-size:.98rem;line-height:1.55}
+@media(min-width:861px){
+  .prices.solo{grid-template-columns:min(940px,100%)}
+  .prices.solo .pcard{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);align-items:stretch}
+  .prices.solo .pcell{padding:2.6rem 2.8rem}
+  .prices.solo .pcell-main{justify-content:center}
+  .prices.solo .pcell-main .tier{margin-bottom:0}
+  .prices.solo .pcell-main .price{font-size:3.6rem;margin-top:1.2rem}
+  .prices.solo .pcell-main .psub{min-height:0;font-size:1rem;margin-top:.7rem}
+  .prices.solo .pcell-main .btn{margin-top:2rem}
+  .prices.solo .pcell-list{border-left:1px solid var(--line-soft);justify-content:center;padding-top:2.6rem}
+  .prices.solo .pcell-list .plist{margin:0;padding:0;border-top:0;gap:.9rem}
+}
 
 /* ---------- Footer ---------- */
 footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:var(--muted)}
@@ -823,48 +778,31 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
 <section class="pad" id="pricing">
   <div class="wrap">
     <div class="center reveal">
-      <h2>Bring me on. <span class="grad">Flat monthly price.</span></h2>
-      <p class="lead">Three ways to work together — from keeping your records straight to having someone on your team. No payroll, no W-2, no overhead. Every plan starts with a one-time $495 onboarding, so your system is built before you pay a monthly dollar.</p>
+      <h2>Bring me on. <span class="grad">One flat price.</span></h2>
+      <p class="lead">One plan, one price, month to month. No payroll, no W-2, no overhead. A one-time $495 onboarding builds your system before you pay a monthly dollar — after that it is $195 a month.</p>
     </div>
-    <div class="prices">
-      <article class="pcard reveal">
-        <span class="tier t1">ORGANIZED</span>
+    <div class="prices solo">
+      <article class="pcard feature reveal">
+        <div class="pcell pcell-main">
+        <span class="tier t2">THE MONTHLY PLAN</span>
         <div class="price">$195 <span>/ month</span></div>
         <div class="psub">Your whole paper trail, in order.</div>
+        <a class="btn btn-primary" href="tel:12134440024">Get started</a>
+        </div>
+        <div class="pcell pcell-list">
         <ul class="plist">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your dashboard — the whole business at a glance, searchable and updated daily</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your dashboard — the whole business at a glance on desktop and phone, searchable and updated daily</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Receipts and bills logged straight from the email you already get — nothing to forward</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Snap a photo of any document — insurance, permits, registrations — filed where you'll find it</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Every dollar in and out, itemized line by line — current the moment you look</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Snap a photo of any document — insurance, permits, registrations — filed where you'll find it</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A plain-English report of your month, delivered on the first</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Personal support from MVTech — a real person on the phone</li>
         </ul>
-        <a class="btn btn-ghost" href="tel:12134440024">Get started</a>
-      </article>
-      <article class="pcard feature reveal">
-        <span class="tier t2">PROMOTED <span class="pop">· Most popular</span></span>
-        <div class="price">$395 <span>/ month</span></div>
-        <div class="psub">In order — and out in front of customers.</div>
-        <ul class="plist">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in Organized</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your ads written, posted and kept running</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Graphics, flyers and custom documents on request</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in your own brand — polished and print-ready</li>
-        </ul>
-        <a class="btn btn-primary" href="tel:12134440024">Choose Promoted</a>
-      </article>
-      <article class="pcard reveal">
-        <span class="tier t3">TEAM MEMBER</span>
-        <div class="price">$695 <span>/ month</span></div>
-        <div class="psub">Someone on your team, across the whole operation.</div>
-        <ul class="plist">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Everything in Promoted</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your MVTech rep on call — a direct line anytime</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Your tech person for the everyday stuff — apps, devices, accounts</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>A deep-dive research report and review each quarter</li>
-        </ul>
-        <a class="btn btn-gold" href="tel:12134440024">Choose Team Member</a>
+        </div>
       </article>
     </div>
-    <p class="alacarte reveal">Not ready for a monthly plan? Single projects — a form, a flyer, a research report — are available one at a time. Ask when we talk.</p>
+    <p class="alacarte reveal">Month to month, both ways — no contract, no term, no cancellation fee.</p>
+    <p class="alacarte reveal">Need something beyond the plan? Ads, flyers, forms, listing sheets, research reports — single projects, priced one at a time. Ask when we talk.</p>
   </div>
 </section>
 
@@ -886,7 +824,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
       </details>
       <details>
         <summary><h3>How much does MVTech cost?</h3></summary>
-        <div class="ans wide"><p class="ansintro">A one-time $495 onboarding builds your system up front, then a flat monthly price.</p><ul class="syslist"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>$495 setup — one time, before your first monthly dollar</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>$195 a month — Organized</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>$395 a month — Promoted</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>$695 a month — Team Member</li></ul><p class="ansfoot">No hourly billing and no per-document charges. The monthly price is the price.</p></div>
+        <div class="ans wide"><p class="ansintro">One plan at one flat price — a one-time $495 onboarding builds your system up front, then $195 a month.</p><ul class="syslist"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>$495 setup — one time, before your first monthly dollar</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>$195 a month — the plan, month to month</li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Single projects — ads, flyers, forms, research reports — priced one at a time</li></ul><p class="ansfoot">No hourly billing and no per-document charges. The monthly price is the price, there is no contract and no term, and you can stop whenever you like.</p></div>
       </details>
       <details>
         <summary><h3>Do I have to learn new software?</h3></summary>
@@ -924,7 +862,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:3.5rem 2.5rem;color:v
         <div class="phones"><a href="tel:12134440024">213-444-0024</a></div>
       </div>
       <div class="foot-col"><h4>Service</h4><a href="#showcase">Sample work</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
-      <div class="foot-col"><h4>Company</h4><a href="tel:12134440024">Call 213-444-0024</a><a href="mailto:tech@mvtechusa.com">Contact</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="tel:12134440024">Call 213-444-0024</a></div>
       <div class="foot-col"><h4>More</h4><a href="#faq">Questions and answers</a><a href="privacy.html">Privacy</a><a href="llms.txt">Summary for AI assistants</a></div>
     </div>
     <div class="foot-bottom">

@@ -184,6 +184,7 @@ section { padding: 64px 0; }
 
 /* ===== Pricing ===== */
 .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tiers.tiers-solo { grid-template-columns: min(420px, 100%); justify-content: center; }
 .tier {
   border: 1.5px solid var(--brand-divider); border-radius: 12px;
   padding: 28px 24px; display: flex; flex-direction: column;

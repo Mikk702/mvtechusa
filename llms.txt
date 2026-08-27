@@ -15,7 +15,6 @@ Canonical site: https://mvtechusa.com/
 
 ## Contact
 - Phone (call or text): 213-444-0024
-- Email: tech@mvtechusa.com
 - Website: https://mvtechusa.com
 
 ## What MVTech does
@@ -26,8 +25,8 @@ Canonical site: https://mvtechusa.com/
 - Monthly operations reports — plain-English income, expense and trend reporting, ready to hand to a tax preparer, lender or buyer
 - Custom document production — quotes, invoices, intake forms, letters, listing sheets and reports, each built to order and produced as polished, branded PDFs in the client's own brand
 - Form conversion and document merge — a photo or scan becomes a clean custom fillable form; a stack of forms becomes one packet filled from a single entry
-- Advertising support (Promoted plan and up) — ads written, posted and kept running; graphics and flyers produced on request
-- Deep-dive research reports (Team Member plan, also sold à la carte) — sourced, cited, decision-ready research on a market, competitor or business question
+- Advertising support (à la carte) — ads written, posted and kept running; graphics and flyers produced on request
+- Deep-dive research reports (à la carte) — sourced, cited, decision-ready research on a market, competitor or business question
 
 ## The core differentiator: itemization
 A bank feed or card statement records that a business spent $214 at a supply store. MVTech records what was actually in the cart, line by line, because it reads the receipt itself. That level of detail is what bank feeds, card statements and store apps discard, and it is what makes job costing, category detail and clean tax preparation possible.
@@ -44,11 +43,10 @@ Owner-operators who wear every hat, generally under about six employees: trades 
 
 ## Pricing
 - One-time onboarding: $495 — full setup, document intake and first-month buildout, paid before any monthly billing begins
-- Organized: $195 per month — dashboard, document filing, itemized income and expense tracking, monthly report
-- Promoted: $395 per month — everything in Organized, plus ads written/posted/kept running and graphics, flyers and custom documents on request, all in the client's brand
-- Team Member: $695 per month — everything in Promoted, plus a direct line to an MVTech rep anytime, everyday tech support for apps/devices/accounts, and a deep-dive research report and review each quarter
+- The monthly plan: $195 per month — dashboard on desktop and phone, document filing, itemized income and expense tracking, renewal dates surfaced before they come due, plain-English monthly report, and personal support from MVTech
+- À la carte, on top of the plan or on their own: ads written/posted/kept running, graphics, flyers, custom documents, listing sheets, form builds and deep-dive research reports — single projects, priced one at a time
 
-Flat monthly pricing. No hourly billing, no per-document charges, no long-term contract.
+There is one plan at one flat price. No hourly billing, no per-document charges, no contract and no term — the client can stop at the end of any month, and MVTech works the same way. Tiered plans may return later; today there is one.
 
 ## Trust and access
 - The client owns everything. Records are kept in ordinary formats (spreadsheets and PDFs) in a folder that belongs to the client — ready to hand over when they need to prove income, apply for financing, or give a preparer a finished year.
@@ -59,10 +57,10 @@ Q: What does MVTech do?
 A: It handles the paper side of an owner-operated business — filing every document, tracking every dollar in and out line by line, producing the documents the business sends out, and delivering a plain-English report on the first of each month.
 
 Q: How much does it cost?
-A: A one-time $495 onboarding, then $195, $395 or $695 per month depending on plan.
+A: A one-time $495 onboarding, then $195 per month. One plan, one price, month to month.
 
 Q: Can I buy a single project instead of a monthly plan?
-A: Yes. Single projects — a form, a flyer, a document build, a research report — are available à la carte alongside the monthly plans.
+A: Yes. Single projects — a form, a flyer, a document build, a research report — are available à la carte, alongside the monthly plan or on their own.
 
 Q: Do I have to learn new software?
 A: No. Nothing to install, nothing to log into. Spreadsheets open in Excel or Google Sheets.
