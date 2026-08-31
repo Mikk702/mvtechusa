@@ -1,6 +1,6 @@
 # MVTech
 
-> MVTech handles the paper side of owner-operated businesses in the United States. We organize and file every document, track every dollar in and out down to the line item, produce the quotes, invoices and forms a business sends out, and deliver a plain-English operations report on the first of every month.
+> MVTech handles the paper side of owner-operated businesses in the United States. We organize and file every document, track every dollar in and out down to the line item, produce the quotes, invoices and forms a business sends out, and deliver a plain-English operations report on the first of every month. MVTech also acts as a business tech mentor to the owner: a standing weekly session through the first month, and available on request after that.
 
 Last updated: 2026-08-17
 Canonical site: https://mvtechusa.com/
@@ -8,7 +8,7 @@ Canonical site: https://mvtechusa.com/
 ## Identity
 - Name: MVTech (also written MVTech USA)
 - Type: remote document, records and operations service for small owner-operated businesses — engaged like an associate or team member rather than bought like software, with no payroll, W-2 or overhead
-- Founder and operator: Michael Vetter, Business Workflow Designer
+- Founder and operator: Michael Vetter, Business Workflow Designer and business tech mentor to the owners MVTech serves
 - Serves: the entire United States, remotely
 - Part of: MVEnterprises
 - What MVTech is NOT: not a CPA firm, not a tax preparer, not a law firm. MVTech organizes records and produces documents; it does not file taxes or give legal advice.
