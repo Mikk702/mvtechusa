@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Hernandez Fencing LLC — Account Dashboard</title>
+  <title>[BUSINESS_NAME] — Account Dashboard</title>
   <style>
     /* Brand system (locked 6/16/2026):
        --brand-primary  = BLACK universally — text, headings, wordmark, totals
@@ -14,8 +14,8 @@
        Colored text only on white; on tinted bands, text goes black. */
     :root {
       --brand-primary:    #000000;                /* universal — DO NOT change per client */
-      --brand-secondary:  #BF5700;  /* client identity */
-      --brand-accent:     #DAA520;     /* client accent */
+      --brand-secondary:  [BRAND_SECONDARY_HEX];  /* client identity */
+      --brand-accent:     [BRAND_ACCENT_HEX];     /* client accent */
       --brand-text:       #1a1a1a;
       --brand-soft:       #7a7a7a;
       --bg-card:          #fafafa;
@@ -25,8 +25,8 @@
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       background:
-        linear-gradient(rgba(191, 87, 0,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(191, 87, 0,0.045) 1px, transparent 1px),
+        linear-gradient(rgba([BRAND_SECONDARY_RGB],0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba([BRAND_SECONDARY_RGB],0.045) 1px, transparent 1px),
         linear-gradient(180deg, #f3f4f6 0%, #fbfbfc 100%);
       background-size: 46px 46px, 46px 46px, 100% 100%;
       background-attachment: fixed;
@@ -41,7 +41,7 @@
       align-items: center;
       margin-bottom: 32px;
       padding: 28px 20px;
-      background: linear-gradient(180deg, #ffffff 0%, rgba(191, 87, 0, 0.04) 100%);
+      background: linear-gradient(180deg, #ffffff 0%, rgba([BRAND_SECONDARY_RGB], 0.04) 100%);
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       border-top: 4px solid var(--brand-primary);
@@ -94,12 +94,12 @@
       font-size: 13px;
       font-family: inherit;
       color: var(--brand-text);
-      background: rgba(191, 87, 0, 0.02);
+      background: rgba([BRAND_SECONDARY_RGB], 0.02);
     }
     .header-center input:focus {
       outline: none;
       border-color: var(--brand-accent);
-      background: rgba(218, 165, 32, 0.06);
+      background: rgba([BRAND_ACCENT_RGB], 0.06);
     }
     .header-center button {
       margin-left: 10px;
@@ -118,7 +118,7 @@
     .header-center button:hover {
       background: var(--brand-accent);
       border-color: var(--brand-secondary);
-      box-shadow: 0 4px 12px rgba(191, 87, 0, 0.2);
+      box-shadow: 0 4px 12px rgba([BRAND_SECONDARY_RGB], 0.2);
     }
     .company-name {
       font-size: 20px;
@@ -243,7 +243,7 @@
       background: #ffffff; color: var(--brand-primary); border-radius: 8px;
       font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer;
     }
-    .add-event-btn:hover { background: linear-gradient(180deg, rgba(191, 87, 0,0.08) 0%, #ffffff 100%); }
+    .add-event-btn:hover { background: linear-gradient(180deg, rgba([BRAND_SECONDARY_RGB],0.08) 0%, #ffffff 100%); }
     .add-event-form { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
     .add-event-form input {
       width: 100%; padding: 9px 10px; border: 1px solid var(--border-light);
@@ -310,7 +310,7 @@
 
     .month-box {
       padding: 16px;
-      background: linear-gradient(180deg, rgba(191, 87, 0, 0.10) 0%, #ffffff 100%);
+      background: linear-gradient(180deg, rgba([BRAND_SECONDARY_RGB], 0.10) 0%, #ffffff 100%);
       color: var(--brand-text);
       border-radius: 8px;
       margin-top: 12px;
@@ -436,12 +436,12 @@
       border-radius: 8px;
       padding: 24px;
       text-align: center;
-      background: linear-gradient(180deg, rgba(191, 87, 0, 0.06) 0%, #ffffff 100%);
+      background: linear-gradient(180deg, rgba([BRAND_SECONDARY_RGB], 0.06) 0%, #ffffff 100%);
       cursor: pointer;
       transition: all 0.2s;
     }
     .drop-zone:hover, .drop-zone.dragover {
-      background: linear-gradient(180deg, rgba(191, 87, 0, 0.14) 0%, #ffffff 100%);
+      background: linear-gradient(180deg, rgba([BRAND_SECONDARY_RGB], 0.14) 0%, #ffffff 100%);
       border-color: var(--brand-primary);
       border-style: solid;
     }
@@ -509,15 +509,15 @@
       --bg-card: #1b1b20;
       color: var(--brand-text);
       background:
-        linear-gradient(rgba(191, 87, 0,0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(191, 87, 0,0.10) 1px, transparent 1px),
+        linear-gradient(rgba([BRAND_SECONDARY_RGB],0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba([BRAND_SECONDARY_RGB],0.10) 1px, transparent 1px),
         linear-gradient(180deg, #0e0e12 0%, #15151a 100%);
       background-size: 46px 46px, 46px 46px, 100% 100%;
       background-attachment: fixed;
     }
     body.theme-dark .theme-toggle { background: rgba(27,27,32,0.9); }
     body.theme-dark .header {
-      background: linear-gradient(180deg, #1b1b20 0%, rgba(191, 87, 0,0.12) 100%);
+      background: linear-gradient(180deg, #1b1b20 0%, rgba([BRAND_SECONDARY_RGB],0.12) 100%);
       box-shadow: 0 2px 12px rgba(0,0,0,0.4);
     }
     body.theme-dark .card {
@@ -542,7 +542,7 @@
     body.theme-dark .btn { background: var(--brand-secondary); color: #0e0e12; }
     body.theme-dark .btn:hover { background: var(--brand-accent); }
     body.theme-dark .month-box {
-      background: linear-gradient(180deg, rgba(191, 87, 0,0.18) 0%, rgba(27,27,32,0) 100%);
+      background: linear-gradient(180deg, rgba([BRAND_SECONDARY_RGB],0.18) 0%, rgba(27,27,32,0) 100%);
     }
     body.theme-dark .pipeline-pill.stale { background: #0e0e12; }
     body.theme-dark .pipeline-pill.ok {
@@ -552,24 +552,24 @@
       text-shadow: 0 0 7px rgba(57,255,20,0.65);
     }
     body.theme-dark .drop-zone {
-      background: linear-gradient(180deg, rgba(191, 87, 0,0.10) 0%, rgba(27,27,32,0) 100%);
+      background: linear-gradient(180deg, rgba([BRAND_SECONDARY_RGB],0.10) 0%, rgba(27,27,32,0) 100%);
     }
     body.theme-dark .tip, body.theme-dark .note-form { background: #0e0e12; }
   </style>
-  
+  <!--THEME_CSS-->
 </head>
 <body>
 
 <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark / light mode">🌙</button>
 <script>
 (function(){
-  var KEY = 'mvtech-theme-mvtech-dashboard-hernandez';
+  var KEY = 'mvtech-theme-[DB_NAME]';
   function applyTheme(mode){
     document.body.classList.toggle('theme-dark', mode === 'dark');
     var b = document.getElementById('themeToggle');
     if (b) b.textContent = (mode === 'dark') ? '☀️' : '🌙';
   }
-  applyTheme(localStorage.getItem(KEY) || 'light');
+  applyTheme(localStorage.getItem(KEY) || '[THEME_DEFAULT]');
   document.addEventListener('DOMContentLoaded', function(){
     var b = document.getElementById('themeToggle');
     if (!b) return;
@@ -589,16 +589,15 @@
       <!-- Brand mark — block token. regenerate_client_dashboard.py substitutes
            either the client's custom SVG or the default outlined circle.
            No solid color fill (locked 6/18/2026); circle shape (locked 6/18/2026). -->
+      <!--LOGO_SVG-->
       <svg width="50" height="50" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="3" width="36" height="36" fill="none" stroke="#000000" stroke-width="1.8" rx="2"/>
-        <line x1="3"  y1="11" x2="11" y2="3"  stroke="#000000" stroke-width="1.2" opacity="0.65"/>
-        <line x1="3"  y1="20" x2="20" y2="3"  stroke="#000000" stroke-width="1.2" opacity="0.65"/>
-        <line x1="3"  y1="29" x2="29" y2="3"  stroke="#000000" stroke-width="1.2" opacity="0.65"/>
-        <line x1="3"  y1="38" x2="38" y2="3"  stroke="#000000" stroke-width="1.2" opacity="0.65"/>
+        <circle cx="21" cy="21" r="18" fill="none" stroke="#000000" stroke-width="2"/>
+        <text x="21" y="27" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800" fill="#000000" letter-spacing="0">[LOGO_INITIALS]</text>
       </svg>
+      <!--/LOGO_SVG-->
       <div>
-        <div class="company-name">HERNANDEZ <span class="accent">FENCING</span></div>
-        <div class="subtitle">Your Choice For Quality Fencing</div>
+        <div class="company-name">[WORDMARK_PRIMARY]<span class="accent">[WORDMARK_ACCENT]</span></div>
+        <div class="subtitle">[SUBTITLE]</div>
       </div>
     </div>
     <div class="header-center">
@@ -607,8 +606,8 @@
       <button type="button" onclick="doDriveSearch()">🔎</button>
     </div>
     <div class="header-right">
-      <b>David Hernandez</b>
-      <span style="font-size: 11px;">usahandling@gmail.com · (520) 526-8299</span>
+      <b>[OWNER_NAME]</b>
+      <span style="font-size: 11px;">[OWNER_EMAIL] · [OWNER_PHONE]</span>
       <div id="pipelinePill" class="pipeline-pill" style="display:none; margin-top: 4px;"></div>
     </div>
   </div>
@@ -631,32 +630,7 @@
         <strong>💡 Tip:</strong> Email receipts and payments are tracked automatically. Use this for things not documented by email.
       </div>
     </div>
-    <div class="card">
-      <div class="card-title">Account Package Documents</div>
-      <ul class="kit-list">
-        <li>
-          <div>
-            <a href="Marketing/Hernandez_Fencing_Onepager.pdf" target="_blank">Service Onepager</a>
-            <span class="file-desc">Chain link fencing — what you build, how you work, who for</span>
-          </div>
-          <span class="file-type">PDF</span>
-        </li>
-        <li>
-          <div>
-            <a href="Quotes/Hernandez_Fencing_Quote_Template.pdf" target="_blank">Quote Form</a>
-            <span class="file-desc">Fillable estimate — project total &amp; deposit</span>
-          </div>
-          <span class="file-type">PDF</span>
-        </li>
-        <li>
-          <div>
-            <a href="Marketing/Hernandez_Fencing_Business_Card.pdf" target="_blank">Business Card</a>
-            <span class="file-desc">Press-ready, same design language as the rest of the kit</span>
-          </div>
-          <span class="file-type">PDF</span>
-        </li>
-      </ul>
-    </div>
+    <!--ACCOUNT_PACKAGE_CARD-->
   </div>
 
   <div class="grid">
@@ -690,7 +664,7 @@
            (adding events) on the SAME account as the READ path (build_upcoming's calendar
            token) — otherwise events land on whatever account Chrome defaults to and never
            show in Upcoming. Events land on the LIVE calendar = sync everywhere. -->
-      <a class="add-event-btn" href="https://calendar.google.com/calendar/r/eventedit?authuser=usahandling@gmail.com"
+      <a class="add-event-btn" href="https://calendar.google.com/calendar/r/eventedit?authuser=[OWNER_EMAIL]"
          target="_blank" rel="noopener"
          style="display:block;text-align:center;text-decoration:none;">+ New Event</a>
     </div>
@@ -746,7 +720,7 @@ function renderUpcoming() {
     // authuser pins the link to the account MVTech reads (owner_email) so the
     // event lands on the SAME calendar the dashboard pulls from — not whatever
     // account Chrome happens to default to.
-    const gcal = `https://calendar.google.com/calendar/render?action=TEMPLATE&authuser=usahandling@gmail.com&text=${encodeURIComponent(it.label)}&dates=${gd}/${ge}&details=${encodeURIComponent(it.note||'')}`;
+    const gcal = `https://calendar.google.com/calendar/render?action=TEMPLATE&authuser=[OWNER_EMAIL]&text=${encodeURIComponent(it.label)}&dates=${gd}/${ge}&details=${encodeURIComponent(it.note||'')}`;
     // Calendar-sourced events are already ON Google Calendar — link to view them,
     // not "+ Add" (which would duplicate the event). Other items keep the add link.
     const isCal = it.type === 'calendar';
@@ -1232,7 +1206,7 @@ const activity = document.getElementById('activity');
 const connectBtn = document.getElementById('connectBtn');
 const connectStatus = document.getElementById('connectStatus');
 
-const DB_NAME = 'mvtech-dashboard-hernandez';
+const DB_NAME = '[DB_NAME]';
 const STORE   = 'handles';
 const EVENTS_STORE = 'events';   // client-added personal events (Add Event)
 function openDB() {
@@ -1359,16 +1333,16 @@ connectBtn.addEventListener('click', async () => {
     // to be wired to a DIFFERENT client's Incoming with no warning: drops would
     // then be processed as that client and booked to their books. Verifying the
     // client folder by its exact name makes the check unambiguous. Found 8/2/2026.
-    const picked = await window.showDirectoryPicker({ id: 'hernandez-incoming', mode: 'readwrite' });
+    const picked = await window.showDirectoryPicker({ id: '[PICKER_ID]', mode: 'readwrite' });
 
     if (picked.name === 'Incoming') {
-      alert('Please choose your main folder — "David Hernandez - Hernandez Fencing LLC" — rather than the ' +
+      alert('Please choose your main folder — "[CLIENT_FOLDER]" — rather than the ' +
             '"Incoming" folder inside it. The dashboard finds Incoming on its own.');
       return;
     }
-    if (picked.name !== 'David Hernandez - Hernandez Fencing LLC') {
+    if (picked.name !== '[CLIENT_FOLDER]') {
       alert(`That is the "${picked.name}" folder.\n\n` +
-            `This dashboard saves to "David Hernandez - Hernandez Fencing LLC".\n\n` +
+            `This dashboard saves to "[CLIENT_FOLDER]".\n\n` +
             `Choose that folder and try again.`);
       return;
     }
@@ -1377,7 +1351,7 @@ connectBtn.addEventListener('click', async () => {
     try {
       handle = await picked.getDirectoryHandle('Incoming');
     } catch (e) {
-      alert('Could not find an "Incoming" folder inside "David Hernandez - Hernandez Fencing LLC". ' +
+      alert('Could not find an "Incoming" folder inside "[CLIENT_FOLDER]". ' +
             'If it was renamed or moved, tell Michael before dropping anything.');
       return;
     }
@@ -1464,16 +1438,16 @@ function flashDrop(kind, msg) {
 
 function doDriveSearch(){
   var q = (document.getElementById('driveSearchInput').value || '').trim();
-  // Pin to the client's OWN Google account (their onboarding-form Gmail, usahandling@gmail.com) —
+  // Pin to the client's OWN Google account (their onboarding-form Gmail, [OWNER_EMAIL]) —
   // the account MVTech reads and that has access to their deliverables — so search always
   // uses the right account, not whatever account the browser is signed into.
   // (Was mvtech.admin@gmail.com — a central account, banned 6/30/2026 — the wrong model.)
-  var au = 'authuser=usahandling@gmail.com';
+  var au = 'authuser=[OWNER_EMAIL]';
   // Scope search to THIS client's own folder via parent:<id> (recurses subfolders).
   // An empty folder value falls back to the whole account (legacy behavior) — matters
   // for tech@-owned consoles that see every folder; a client account is already
   // permission-scoped to its own folder, so scoping is defense-in-depth there.
-  var folder = '167itBbIrpKlA9S8majI2e6UUbY_DzFNK';
+  var folder = '[DRIVE_FOLDER_ID]';
   var scope  = folder ? '%20parent:' + folder : '';
   window.open(q ? 'https://drive.google.com/drive/search?q=' + encodeURIComponent(q) + scope + '&' + au
                 : (folder ? 'https://drive.google.com/drive/folders/' + folder + '?' + au
@@ -1524,10 +1498,10 @@ loadLocalEvents();
 // The fallback is a LINK the reader clicks, not an automatic window.open: after an
 // awaited fetch the click is no longer a user gesture and popup blockers eat it.
 (function () {
-  var ENDPOINT = 'https://mvtech-notes.tech-2dd.workers.dev';
-  var TOKEN    = 'mvtn_SSlEUdIzN7irDg_32f5jwomgcfk9rrNONi27pq2jw-s';
+  var ENDPOINT = '[NOTE_ENDPOINT]';
+  var TOKEN    = '[NOTE_TOKEN]';
   var TO       = 'hermes@mvtechusa.com';
-  var SUBJECT  = '[Dashboard] Note from Hernandez Fencing';
+  var SUBJECT  = '[Dashboard] Note from [BUSINESS_SHORT]';
 
   var form = document.querySelector('.note-form');
   if (!form) { return; }
@@ -1607,5 +1581,17 @@ loadLocalEvents();
 })();
 </script>
 
+
+<script>
+window.MVTECH_MONTHS = [{"month": "July 2026", "income": 4850, "expenses": 2340, "net": 2510}, {"month": "August 2026", "income": 5120, "expenses": 2780, "net": 2340}, {"month": "September 2026", "income": 3940, "expenses": 1920, "net": 2020}];
+window.MVTECH_MONTH = {"month": "September 2026", "income": 3940, "expenses": 1920, "net": 2020};
+window.MVTECH_ACTIVITY = [{"summary": "Home Depot \u2014 lumber, fasteners", "amount": 187.42, "date": "2026-09-06", "kind": "expense", "ts": "2 days ago", "vendors": ["Home Depot"]}, {"summary": "Zelle payment received", "amount": 850.0, "date": "2026-09-05", "kind": "income", "ts": "3 days ago"}, {"summary": "Lowes \u2014 roofing materials", "amount": 412.18, "date": "2026-09-04", "kind": "expense", "ts": "4 days ago", "vendors": ["Lowes"]}, {"summary": "Square deposit", "amount": 1240.0, "date": "2026-09-03", "kind": "income", "ts": "5 days ago"}, {"summary": "Home Depot \u2014 pressure washer rental", "amount": 89.99, "date": "2026-09-02", "kind": "expense", "ts": "6 days ago", "vendors": ["Home Depot"]}, {"summary": "Truck fuel", "amount": 56.32, "date": "2026-09-01", "kind": "expense", "ts": "7 days ago", "vendors": ["Shell"]}, {"summary": "Client invoice paid", "amount": 2100.0, "date": "2026-08-31", "kind": "income", "ts": "8 days ago"}, {"summary": "Ace Hardware \u2014 tools & supplies", "amount": 234.56, "date": "2026-08-30", "kind": "expense", "ts": "9 days ago", "vendors": ["Ace Hardware"]}, {"summary": "Insurance premium (quarterly)", "amount": 385.0, "date": "2026-08-28", "kind": "expense", "ts": "11 days ago", "vendors": ["State Farm"]}, {"summary": "Large job payment", "amount": 3500.0, "date": "2026-08-27", "kind": "income", "ts": "12 days ago"}];
+window.MVTECH_UPCOMING = [{"label": "Insurance due", "date": "2026-10-28", "days_until": 51}, {"label": "Quarterly tax payment", "date": "2026-09-15", "days_until": 8}, {"label": "Truck registration renewal", "date": "2026-11-12", "days_until": 66}];
+window.MVTECH_DOCUMENTS = [{"summary": "Invoice: Patio project @ 2847 Oak St", "date": "2026-09-04", "ts": "4 days ago", "kind": "invoice"}, {"summary": "Receipt: Home Depot supplies", "date": "2026-09-02", "ts": "6 days ago", "kind": "receipt"}, {"summary": "Quote: Fence replacement estimate", "date": "2026-08-31", "ts": "8 days ago", "kind": "quote"}];
+window.MVTECH_LOCAL_EVENTS = [];
+// Demo data injected — this dashboard auto-generates from the default template
+document.getElementById("bizName").textContent = "Hernandez Fencing LLC";
+document.title = "Hernandez Fencing LLC — Sales Demo Dashboard";
+</script>
 </body>
 </html>
